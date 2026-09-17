@@ -1,5 +1,7 @@
 import type { MetadataRoute } from "next";
 
+export const dynamic = "force-static";
+
 const paths = ["", "/business", "/products", "/network", "/strengths", "/trade-flow", "/company", "/news", "/contact", "/privacy", "/credits"];
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://example.com";
 
