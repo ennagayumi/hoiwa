@@ -17,7 +17,7 @@ const projection = geoNaturalEarth1().fitExtent([[18, 18], [882, 482]], countrie
 const path = geoPath(projection);
 
 const regionPoints = [
-  { key: "cn" as const, point: [118.8, 32.06] as Coordinate, origin: true },
+  { key: "cn" as const, point: [110, 34] as Coordinate, origin: true },
   { key: "jp" as const, point: [139.7, 35.7] as Coordinate, origin: false },
   { key: "sea" as const, point: [105, 8] as Coordinate, origin: false },
   { key: "af" as const, point: [24, 1] as Coordinate, origin: false },
@@ -28,12 +28,12 @@ function route(from: Coordinate, to: Coordinate): LineString {
   return { type: "LineString", coordinates: Array.from({ length: 41 }, (_, index) => interpolate(index / 40)) };
 }
 
-// Supply flows radiate from the sourcing base in Nanjing; Japan also links onward to the demand regions.
-const [nanjing, japan, seAsia, africa] = regionPoints;
+// Supply flows radiate from the sourcing base in China; Japan also links onward to the demand regions.
+const [china, japan, seAsia, africa] = regionPoints;
 const connections = [
-  route(nanjing.point, japan.point),
-  route(nanjing.point, seAsia.point),
-  route(nanjing.point, africa.point),
+  route(china.point, japan.point),
+  route(china.point, seAsia.point),
+  route(china.point, africa.point),
   route(japan.point, seAsia.point),
 ];
 
@@ -58,7 +58,7 @@ export default function NetworkMap() {
             const label = t.network.mapLabels[key];
             const projected = projection(point);
             if (!projected) return null;
-            // Nanjing and Tokyo sit close together; push the Nanjing label to the left so they do not overlap.
+            // Keep the China origin label to the left of the pin so it stays readable next to Japan.
             const labelX = origin ? -11 : 11;
             return (
               <g key={key} className={origin ? "network-map__node--origin" : undefined} transform={`translate(${projected[0]} ${projected[1]})`}>
