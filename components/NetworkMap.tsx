@@ -17,9 +17,10 @@ const projection = geoNaturalEarth1().fitExtent([[18, 18], [882, 482]], countrie
 const path = geoPath(projection);
 
 const regionPoints = [
-  { key: "jp" as const, point: [139.7, 35.7] as Coordinate },
-  { key: "sea" as const, point: [105, 8] as Coordinate },
-  { key: "af" as const, point: [24, 1] as Coordinate },
+  { key: "cn" as const, point: [118.8, 32.06] as Coordinate, origin: true },
+  { key: "jp" as const, point: [139.7, 35.7] as Coordinate, origin: false },
+  { key: "sea" as const, point: [105, 8] as Coordinate, origin: false },
+  { key: "af" as const, point: [24, 1] as Coordinate, origin: false },
 ] as const;
 
 function route(from: Coordinate, to: Coordinate): LineString {
@@ -27,9 +28,13 @@ function route(from: Coordinate, to: Coordinate): LineString {
   return { type: "LineString", coordinates: Array.from({ length: 41 }, (_, index) => interpolate(index / 40)) };
 }
 
+// Supply flows radiate from the sourcing base in Nanjing; Japan also links onward to the demand regions.
+const [nanjing, japan, seAsia, africa] = regionPoints;
 const connections = [
-  route(regionPoints[2].point, regionPoints[0].point),
-  route(regionPoints[1].point, regionPoints[0].point),
+  route(nanjing.point, japan.point),
+  route(nanjing.point, seAsia.point),
+  route(nanjing.point, africa.point),
+  route(japan.point, seAsia.point),
 ];
 
 export default function NetworkMap() {
@@ -49,15 +54,17 @@ export default function NetworkMap() {
           ))}
         </g>
         <g className="network-map__nodes">
-          {regionPoints.map(({ key, point }) => {
+          {regionPoints.map(({ key, point, origin }) => {
             const label = t.network.mapLabels[key];
             const projected = projection(point);
             if (!projected) return null;
+            // Nanjing and Tokyo sit close together; push the Nanjing label to the left so they do not overlap.
+            const labelX = origin ? -11 : 11;
             return (
-              <g key={key} transform={`translate(${projected[0]} ${projected[1]})`}>
+              <g key={key} className={origin ? "network-map__node--origin" : undefined} transform={`translate(${projected[0]} ${projected[1]})`}>
                 <circle r="5" />
                 <circle className="network-map__pulse" r="11" />
-                <text x="11" y="-9">
+                <text x={labelX} y={origin ? 22 : -9} textAnchor={origin ? "end" : "start"}>
                   {label}
                 </text>
               </g>

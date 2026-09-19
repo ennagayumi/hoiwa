@@ -55,6 +55,14 @@ export default function Home() {
         <div className="intro__body">
           <p>{t.home.introP1}</p>
           <p>{t.home.introP2}</p>
+          <ol className="intro__milestones">
+            {t.home.milestones.map((m) => (
+              <li key={m.year + m.label}>
+                <time dateTime={m.year}>{m.year}</time>
+                <span>{m.label}</span>
+              </li>
+            ))}
+          </ol>
           <Link className="text-link" href="/company">
             {t.home.introLink}
             <span>›</span>

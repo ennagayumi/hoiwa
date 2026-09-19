@@ -25,6 +25,28 @@ export default function CompanyPage() {
           </div>
         </div>
       </section>
+      <section className="history section shell">
+        <SectionHeading en={t.company.historyTag} title={t.company.historyTitle} />
+        <ol className="history__list">
+          {t.company.history.map((item) => (
+            <li key={item.year}>
+              <time dateTime={item.year}>{item.year}</time>
+              <p>{item.text}</p>
+            </li>
+          ))}
+        </ol>
+      </section>
+      <section className="company-outline section shell">
+        <SectionHeading en={t.company.outlineTag} title={t.company.outlineTitle} />
+        <dl>
+          {t.company.outline.map((row) => (
+            <div key={row.dt}>
+              <dt>{row.dt}</dt>
+              <dd>{row.dd}</dd>
+            </div>
+          ))}
+        </dl>
+      </section>
       <section className="access section">
         <div className="shell">
           <SectionHeading en={t.company.accessTag} title={t.company.accessTitle} />
