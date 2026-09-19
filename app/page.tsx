@@ -18,7 +18,7 @@ export default function Home() {
       <section className="home-hero">
         <div className="home-hero__media">
           <figure className="home-hero__panel home-hero__panel--agriculture">
-            <Image src={agricultureHero} alt="Agriculture" fill priority sizes="100vw" />
+            <Image src={agricultureHero} alt={t.home.heroImageAlt} fill priority sizes="100vw" />
             <video autoPlay muted loop playsInline preload="metadata" aria-hidden="true">
               <source src="/videos/agriculture-fertilizing.mp4" type="video/mp4" />
             </video>
@@ -100,7 +100,7 @@ export default function Home() {
 
       <section className="products-home section shell">
         <div className="products-home__visual">
-          <Image src={materialImage} alt="Materials" fill sizes="(max-width: 800px) 100vw, 50vw" />
+          <Image src={materialImage} alt={t.home.materialImageAlt} fill sizes="(max-width: 800px) 100vw, 50vw" />
         </div>
         <div className="products-home__content">
           <SectionHeading en={t.home.productsTag} title={t.home.productsTitle} intro={t.home.productsIntro} />

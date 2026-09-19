@@ -1,3 +1,5 @@
+export const contactEmail = "takeda@hoiwajapan.com";
+
 export const navItems = [
   { label: "事業案内", en: "Business", href: "/business" },
   { label: "肥料原料", en: "Fertilizer", href: "/products" },

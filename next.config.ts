@@ -2,6 +2,13 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   output: "export",
+  ...(process.env.NODE_ENV === "development"
+    ? {
+        async rewrites() {
+          return [{ source: "/api/contact", destination: "http://127.0.0.1:8788/" }];
+        },
+      }
+    : {}),
   // Keep development artifacts separate so a production build cannot
   // invalidate a running local preview.
   distDir: process.env.NODE_ENV === "development" ? ".next-dev" : ".next",

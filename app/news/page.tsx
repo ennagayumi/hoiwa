@@ -8,6 +8,12 @@ export default function NewsPage() {
   const { t } = useLanguage();
   const [filter, setFilter] = useState<"all" | "notice" | "business">("all");
 
+  // "2026" / "2026.09" / "2026.09.18" -> machine-readable ISO date; placeholders such as "2026.XX.XX" get no dateTime.
+  const toDateTime = (label: string) => {
+    const iso = label.replace(/\./g, "-");
+    return /^\d{4}(-\d{2}){0,2}$/.test(iso) ? iso : undefined;
+  };
+
   const filteredItems = t.news.items.filter((item) => {
     if (filter === "all") return true;
     if (filter === "notice") return item.category === t.news.filterNotice;
@@ -33,7 +39,7 @@ export default function NewsPage() {
         <div>
           {filteredItems.map((item) => (
             <article key={item.title}>
-              <time>{item.date}</time>
+              <time dateTime={toDateTime(item.date)}>{item.date}</time>
               <em>{item.category}</em>
               <h2>{item.title}</h2>
             </article>

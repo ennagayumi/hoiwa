@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import Logo from "./Logo";
+import { contactEmail } from "@/data/site";
 import { useLanguage } from "@/context/LanguageContext";
 
 export default function Footer() {
@@ -13,6 +14,10 @@ export default function Footer() {
         <div>
           <Logo light />
           <p style={{ whiteSpace: "pre-line" }}>{t.footer.slogan}</p>
+          <a className="footer__email" href={`mailto:${contactEmail}`}>
+            <small>{t.footer.emailLabel}</small>
+            {contactEmail}
+          </a>
         </div>
         <nav aria-label={t.footer.navAria}>
           <div>

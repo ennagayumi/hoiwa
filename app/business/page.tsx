@@ -15,6 +15,7 @@ export default function BusinessPage() {
         title={t.business.heroTitle}
         lead={t.business.heroLead}
         image="https://images.unsplash.com/photo-1494412519320-aa613dfb7738?auto=format&fit=crop&w=2200&q=85"
+        imageAlt={t.business.heroImageAlt}
       />
       <section className="page-intro section shell">
         <SectionHeading en={t.business.introTag} title={t.business.introTitle} />

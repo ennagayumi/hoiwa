@@ -15,6 +15,7 @@ export default function ProductsPage() {
         title={t.products.heroTitle}
         lead={t.products.heroLead}
         image="https://images.unsplash.com/photo-1471193945509-9ad0617afabf?auto=format&fit=crop&w=2200&q=85"
+        imageAlt={t.products.heroImageAlt}
       />
       <section className="page-intro section shell">
         <SectionHeading en={t.products.introTag} title={t.products.introTitle} />
