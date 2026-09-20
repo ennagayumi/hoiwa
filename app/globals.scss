@@ -224,6 +224,14 @@ button { color: inherit; }
 .spec-spotlight { background: $paper; }
 .spec-spotlight--grid { background: $white; border-top: 1px solid $line; }
 .spec-spotlight .section-heading { margin-bottom: 60px; max-width: 780px; }
+.spec-spotlight--tabs .section-heading { margin-bottom: 32px; }
+.spec-spotlight [role="tabpanel"] { scroll-margin-top: 100px; }
+.spec-tabs { display: flex; gap: 0; margin: 0 0 32px; border-bottom: 1px solid $line; overflow-x: auto; }
+.spec-tabs button { flex: none; appearance: none; background: none; border: 0; border-bottom: 2px solid transparent; margin-bottom: -1px; padding: 12px 20px; color: $muted; font-size: 14px; font-weight: 560; letter-spacing: .03em; cursor: pointer; white-space: nowrap; }
+.spec-tabs button[aria-selected="true"] { color: $navy; border-bottom-color: $bronze; }
+.spec-tabs button:focus-visible { outline: 2px solid rgba(16,40,64,.35); outline-offset: -2px; }
+.spec-choose { margin: 0 0 28px; max-width: 780px; padding: 14px 18px; border-left: 3px solid $bronze; background: $white; color: $ink; font-size: 13px; line-height: 1.85; }
+.spec-spotlight--grid .spec-choose { background: $paper; }
 .spec-grades { display: grid; gap: 70px; }
 .spec-grades--compact { grid-template-columns: 1fr 1fr; gap: 36px 40px; }
 .spec-grade__head { margin-bottom: 28px; max-width: 720px; }
@@ -239,7 +247,16 @@ button { color: inherit; }
 .spec-grade--compact .spec-table thead th,
 .spec-grade--compact .spec-table tbody th,
 .spec-grade--compact .spec-table tbody td { padding: 10px 12px; font-size: 13px; }
-.spec-table { width: 100%; border-collapse: collapse; background: $white; border: 1px solid $line; }
+.spec-grade__data { min-width: 0; overflow-x: auto; }
+.spec-result { margin-top: 16px; border: 1px solid $line; background: $white; }
+.spec-result > summary { display: flex; align-items: center; gap: 10px; padding: 12px 16px; color: $navy; font-size: 13px; font-weight: 600; cursor: pointer; list-style: none; }
+.spec-result > summary::-webkit-details-marker { display: none; }
+.spec-result > summary::before { content: "+"; color: $bronze; font-size: 16px; line-height: 1; }
+.spec-result[open] > summary::before { content: "–"; }
+.spec-result > summary:focus-visible { outline: 2px solid rgba(16,40,64,.35); outline-offset: -2px; }
+.spec-result .spec-table { border-left: 0; border-right: 0; border-bottom: 0; }
+.spec-result .spec-spotlight__note { padding: 0 16px 14px; }
+.spec-table { width: 100%; min-width: 260px; border-collapse: collapse; background: $white; border: 1px solid $line; }
 .spec-table thead th { background: $navy; color: $white; font-size: 11px; font-weight: 500; letter-spacing: .08em; padding: 12px 18px; text-align: left; border: 0; }
 .spec-table thead th:first-child { width: 38%; }
 .spec-table tbody th, .spec-table tbody td { padding: 14px 18px; border-bottom: 1px solid $line; font-size: 14px; text-align: left; vertical-align: top; }
@@ -259,8 +276,11 @@ button { color: inherit; }
 .spec-spotlight__gallery { margin-top: 48px; max-width: 640px; }
 .spec-spotlight__gallery + .spec-spotlight__gallery { margin-top: 40px; }
 .spec-spotlight__gallery h3 { margin: 0 0 18px; color: $navy; font-size: 16px; font-weight: 560; letter-spacing: .03em; }
+.spec-spotlight__cta { margin-top: 28px; }
+.spec-spotlight--tabs .spec-spotlight__note--foot { margin-top: 20px; }
+.spec-spotlight__cta .text-link { margin-top: 0; }
 
-.lineup { border-top: 1px solid $line; }
+.lineup { border-top: 1px solid $line; scroll-margin-top: 100px; }
 .lineup .section-heading { margin-bottom: 55px; }
 .lineup__list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: $line; border: 1px solid $line; }
 .lineup__list li { background: $white; padding: 20px 18px; display: grid; gap: 6px; align-content: start; min-height: 0; }
@@ -446,6 +466,8 @@ button { color: inherit; }
   .company-outline dl div { grid-template-columns: 105px 1fr; gap: 15px; }.company-outline dd { overflow-wrap: anywhere; }
   .history__list li { grid-template-columns: 1fr; gap: 10px; padding: 26px 0; }.history__list time { font-size: 26px; }
   .intro__milestones li { grid-template-columns: 62px 1fr; gap: 14px; }.intro__milestones time { font-size: 17px; }
+  .spec-tabs button { padding: 10px 14px; font-size: 13px; }
+  .spec-choose { padding: 12px 14px; font-size: 12px; }
   .spec-table th { width: 42%; }.spec-table th, .spec-table td { padding: 12px 14px; font-size: 13px; }.spec-table caption { padding: 13px 14px; }
   .spec-forms li { grid-template-columns: 1fr; gap: 8px; padding: 16px; }
   .spec-spotlight__photos { gap: 10px; }

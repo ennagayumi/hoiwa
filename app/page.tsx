@@ -113,7 +113,7 @@ export default function Home() {
         <div className="products-home__content">
           <SectionHeading en={t.home.productsTag} title={t.home.productsTitle} intro={t.home.productsIntro} />
           <ul>
-            {t.products.items.map((p) => (
+            {t.products.items.slice(0, 2).map((p) => (
               <li key={p.en}>
                 <Link href="/products">
                   <span>
@@ -124,6 +124,15 @@ export default function Home() {
                 </Link>
               </li>
             ))}
+            <li>
+              <Link href="/products#other">
+                <span>
+                  <small>{t.products.lineupTag}</small>
+                  {t.products.otherShort}
+                </span>
+                <i>›</i>
+              </Link>
+            </li>
           </ul>
         </div>
       </section>

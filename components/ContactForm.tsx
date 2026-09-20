@@ -1,6 +1,7 @@
 "use client";
 
 import { FormEvent, useEffect, useRef, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import { contactEmail } from "@/data/site";
 import { useLanguage } from "@/context/LanguageContext";
 
@@ -28,6 +29,8 @@ const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 export default function ContactForm() {
   const { t } = useLanguage();
+  const searchParams = useSearchParams();
+  const presetProduct = searchParams.get("product")?.trim() ?? "";
   const [status, setStatus] = useState<Status>("idle");
   const [errors, setErrors] = useState<Partial<Record<string, string>>>({});
   const resultRef = useRef<HTMLDivElement>(null);
@@ -104,6 +107,7 @@ export default function ContactForm() {
           name={id}
           type={type}
           autoComplete={autoComplete}
+          defaultValue={id === "product" ? presetProduct : undefined}
           aria-invalid={message ? true : undefined}
           aria-describedby={message ? `${id}-error` : undefined}
           onInput={() => clearError(id)}
@@ -193,7 +197,7 @@ export default function ContactForm() {
           {errors.message && <strong className="field-error">{errors.message}</strong>}
         </label>
 
-        <details className="form-details">
+        <details className="form-details" open={Boolean(presetProduct) || undefined}>
           <summary>{t.contact.detailsToggle}</summary>
           <div className="form-details__body">
             <p>{t.contact.detailsHint}</p>
