@@ -83,7 +83,7 @@ export default function ProductsPage() {
                 })}
               </div>
               {"galleries" in spotlight &&
-                spotlight.galleries.map((gallery) => (
+                spotlight.galleries?.map((gallery) => (
                   <div key={gallery.title} className="spec-spotlight__gallery">
                     <h3>{gallery.title}</h3>
                     <div className={`spec-spotlight__photos${gallery.items.length === 1 ? " spec-spotlight__photos--single" : ""}`}>
