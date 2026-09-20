@@ -22,9 +22,9 @@ export const products = [
   {
     name: "硫酸マグネシウム",
     en: "Magnesium Sulfate",
-    description: "主力品目。無水（MgSO₄ 98/99%以上）、七水（MgO 16.06–16.27%）、キーゼライト（農業用一水塩）。",
+    description: "主力品目。無水（MgSO₄ 98/99%以上）、七水（MgO 16.06–16.27%）、一水塩（全MgO 24%以上／26%以上）。",
     use: "配合肥料原料、直接施用、葉面散布",
-    package: "25 kg / 50 kg PP袋、ジャンボバッグ",
+    package: "25 kg / 50 kg PP袋、1 t ジャンボバッグ（20フィートで約20 t が目安）",
     region: "中国 → 日本、東南アジア、アフリカ",
   },
   {

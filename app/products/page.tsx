@@ -82,6 +82,30 @@ export default function ProductsPage() {
                   );
                 })}
               </div>
+              {"galleries" in spotlight &&
+                spotlight.galleries.map((gallery) => (
+                  <div key={gallery.title} className="spec-spotlight__gallery">
+                    <h3>{gallery.title}</h3>
+                    <div className={`spec-spotlight__photos${gallery.items.length === 1 ? " spec-spotlight__photos--single" : ""}`}>
+                      {gallery.items.map((item) =>
+                        "type" in item && item.type === "video" ? (
+                          <figure key={item.src}>
+                            <video className="spec-spotlight__clip" autoPlay muted loop playsInline preload="metadata" poster={item.poster} aria-label={item.alt}>
+                              <source src={item.src} type="video/mp4" />
+                            </video>
+                            <img className="spec-spotlight__poster" src={item.poster} alt="" />
+                            <figcaption>{item.caption}</figcaption>
+                          </figure>
+                        ) : (
+                          <figure key={item.src}>
+                            <Image src={item.src} alt={item.alt} width={768} height={1024} sizes="(max-width: 640px) 50vw, 280px" />
+                            <figcaption>{item.caption}</figcaption>
+                          </figure>
+                        ),
+                      )}
+                    </div>
+                  </div>
+                ))}
               <p className="spec-spotlight__note spec-spotlight__note--foot">{spotlight.note}</p>
             </div>
           </section>
