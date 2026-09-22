@@ -2,8 +2,8 @@ import JsonLd from "@/components/JsonLd";
 import { products } from "@/data/site";
 import { absoluteUrl, createPageJsonLd, createPageMetadata, organizationId } from "@/lib/seo";
 
-const title = "肥料・肥料原料｜硫酸アンモニウム・硫酸マグネシウム";
-const description = "主力の硫酸アンモニウムと硫酸マグネシウムをはじめ、尿素、カリ肥料、微量要素塩など、用途・規格・包装・仕向地に応じた肥料原料の調達と輸出入を支援します。";
+const title = "肥料原料｜硫酸マグネシウム・硫酸アンモニウム";
+const description = "主力は硫酸マグネシウムと硫酸アンモニウムです。天津の提携メーカーが製造し、帆岩が日本側の窓口です。規格、粒度、包装は、サンプルとロットのCOAで確認してから契約します。";
 
 export const metadata = createPageMetadata(title, description, "/products");
 

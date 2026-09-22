@@ -2,16 +2,16 @@ import JsonLd from "@/components/JsonLd";
 import { createPageJsonLd, createPageMetadata, organizationId } from "@/lib/seo";
 
 const title = "事業案内｜肥料原料の輸出入・貿易調整";
-const description = "肥料・肥料原料の輸出入を中心に、商品選定、仕様・品質確認、船積み、通関、物流、納品まで一貫して調整します。";
+const description = "肥料原料の日本向け供給、規格の確認、船積みと通関。海外向けは、取引先が決まってから調整します。";
 
 export const metadata = createPageMetadata(title, description, "/business");
 
-const services = ["国際貿易", "輸入業務", "輸出業務", "海外調達", "国内販売", "取引先開拓", "貿易コーディネーション", "物流・供給調整"];
+const services = ["日本向け供給", "規格の確認", "船積みと通関", "海外向け"];
 
 const jsonLd = createPageJsonLd("/business", title, description, [
   {
     "@type": "ItemList",
-    name: "事業領域",
+    name: "行うこと",
     itemListElement: services.map((name, i) => ({
       "@type": "ListItem",
       position: i + 1,

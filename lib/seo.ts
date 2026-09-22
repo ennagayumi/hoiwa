@@ -8,11 +8,11 @@ export const siteUrl = rawSiteUrl.replace(/\/+$/, "");
 export const siteName = "株式会社帆岩";
 export const siteNameEn = "Hoiwa Co., Ltd.";
 export const siteDescription =
-  "株式会社帆岩（Hoiwa Co., Ltd.）は、硫酸アンモニウム、尿素、カリ肥料などの肥料・肥料原料を中心に、日本、東南アジア、アフリカ市場をつなぐ国際貿易会社です。";
+  "株式会社帆岩は、硫酸マグネシウムと硫酸アンモニウムを中心に、肥料原料の規格・COA・納期を日本語で確認して供給する商社です。天津の提携メーカーが製造し、帆岩が日本側の窓口です。";
 
 // Bump when page content changes so <lastmod> stays truthful.
 // Google ignores <lastmod> entirely if it is obviously auto-generated.
-export const siteLastModified = "2026-09-18";
+export const siteLastModified = "2026-09-22";
 
 export const organizationId = `${siteUrl}/#organization`;
 export const websiteId = `${siteUrl}/#website`;

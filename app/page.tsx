@@ -8,10 +8,11 @@ import NetworkMap from "@/components/NetworkMap";
 import { useLanguage } from "@/context/LanguageContext";
 
 const agricultureHero = "https://images.unsplash.com/photo-1721454623235-d71577351010?auto=format&fit=crop&w=1800&q=88";
-const materialImage = "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1800&q=85";
 
 export default function Home() {
   const { t } = useLanguage();
+  const strengths = t.strengths.items.filter((item) => !/源流|Origins|渊源/.test(item.title));
+  const newsItems = t.news.items.filter((item) => item.date !== "1991");
 
   return (
     <>
@@ -54,86 +55,36 @@ export default function Home() {
         <SectionHeading en={t.home.introTag} title={t.home.introTitle} />
         <div className="intro__body">
           <p>{t.home.introP1}</p>
-          <p>{t.home.introP2}</p>
-          <ol className="intro__milestones">
-            {t.home.milestones.map((m) => (
-              <li key={m.year + m.label}>
-                <time dateTime={m.year}>{m.year}</time>
-                <span>{m.label}</span>
-              </li>
-            ))}
-          </ol>
-          <Link className="text-link" href="/company">
+          <Link className="text-link" href="/company#history">
             {t.home.introLink}
             <span>›</span>
           </Link>
         </div>
       </section>
 
-      <section className="nutrient-story section">
+      <section className="featured-home section">
         <div className="shell">
-          <SectionHeading en={t.home.nutritionTag} title={t.home.nutritionTitle} intro={t.home.nutritionIntro} />
-          <div className="nutrient-story__grid">
-            {t.home.nutritionItems.map((item) => (
-              <article key={item.symbol}>
-                <span>{item.symbol}</span>
-                <div>
-                  <small>{item.en}</small>
-                  <h3>{item.title}</h3>
-                  <p>{item.desc}</p>
-                </div>
-              </article>
-            ))}
-          </div>
-          <p className="nutrient-story__note">{t.home.nutritionNote}</p>
-        </div>
-      </section>
-
-      <section className="business-feature section">
-        <div className="shell">
-          <SectionHeading en={t.home.businessTag} title={t.home.businessTitle} intro={t.home.businessIntro} />
-          <div className="business-feature__grid">
-            {t.home.businessCards.map((card) => (
-              <article key={card.num}>
-                <h3>{card.title}</h3>
-                <p>{card.desc}</p>
-              </article>
-            ))}
-          </div>
-          <Link className="button-link" href="/business">
-            {t.home.businessBtn}
-          </Link>
-        </div>
-      </section>
-
-      <section className="products-home section shell">
-        <div className="products-home__visual">
-          <Image src={materialImage} alt={t.home.materialImageAlt} fill sizes="(max-width: 800px) 100vw, 50vw" />
-        </div>
-        <div className="products-home__content">
-          <SectionHeading en={t.home.productsTag} title={t.home.productsTitle} intro={t.home.productsIntro} />
-          <ul>
-            {t.products.items.slice(0, 2).map((p) => (
-              <li key={p.en}>
-                <Link href="/products">
-                  <span>
-                    <small>{p.en}</small>
-                    {p.name}
+          <SectionHeading en={t.home.featuredTag} title={t.home.featuredTitle} />
+          <div className="featured-home__grid">
+            {t.home.featured.map((item) => (
+              <Link key={item.href} href={item.href} className="featured-card">
+                {"image" in item && item.image ? (
+                  <span className="featured-card__visual">
+                    <Image src={item.image} alt={item.imageAlt} width={960} height={640} sizes="(max-width: 800px) 100vw, 560px" />
                   </span>
-                  <i>›</i>
-                </Link>
-              </li>
-            ))}
-            <li>
-              <Link href="/products#other">
-                <span>
-                  <small>{t.products.lineupTag}</small>
-                  {t.products.otherShort}
+                ) : null}
+                <span className="featured-card__body">
+                  <small>{item.en}</small>
+                  <h3>{item.name}</h3>
+                  <p>{item.use}</p>
+                  <b>{item.spec}</b>
                 </span>
-                <i>›</i>
               </Link>
-            </li>
-          </ul>
+            ))}
+          </div>
+          <Link className="button-link" href="/products">
+            {t.home.allProductsCta}
+          </Link>
         </div>
       </section>
 
@@ -141,7 +92,7 @@ export default function Home() {
         <div className="shell">
           <SectionHeading en={t.home.strengthsTag} title={t.home.strengthsTitle} />
           <div className="strengths-home__grid">
-            {t.strengths.items.map((item, i) => (
+            {strengths.map((item, i) => (
               <article key={item.title}>
                 <b>{String(i + 1).padStart(2, "0")}</b>
                 <h3>{item.title}</h3>
@@ -166,18 +117,10 @@ export default function Home() {
         <NetworkMap />
       </section>
 
-      <section className="philosophy section">
-        <div className="shell">
-          <p className="philosophy__en">{t.home.purposeTag}</p>
-          <blockquote style={{ whiteSpace: "pre-line" }}>{t.home.purposeQuote}</blockquote>
-          <p>{t.home.purposeBody}</p>
-        </div>
-      </section>
-
       <section className="news-home section shell">
         <SectionHeading en={t.home.newsTag} title={t.home.newsTitle} />
         <div>
-          {t.news.items.map((item) => (
+          {newsItems.map((item) => (
             <Link href="/news" key={item.title}>
               <time>{item.date}</time>
               <em>{item.category}</em>

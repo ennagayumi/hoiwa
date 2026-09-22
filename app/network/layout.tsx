@@ -1,8 +1,8 @@
 import JsonLd from "@/components/JsonLd";
 import { createPageJsonLd, createPageMetadata } from "@/lib/seo";
 
-const title = "海外ネットワーク｜日本・アジア・アフリカ";
-const description = "日本、東南アジア、アフリカを結ぶ肥料・農業資材の取引ネットワーク。供給元、需要家、物流事業者と連携して国際取引を進めます。";
+const title = "確認できる相手がいる地域｜中国・日本";
+const description = "工場への確認は中国の提携会社、日本の需要家への条件提示は帆岩が行います。東南アジアとアフリカは、取引先が決まった案件から対応します。";
 
 export const metadata = createPageMetadata(title, description, "/network");
 

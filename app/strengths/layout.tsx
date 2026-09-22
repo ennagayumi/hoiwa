@@ -2,7 +2,7 @@ import JsonLd from "@/components/JsonLd";
 import { createPageJsonLd, createPageMetadata } from "@/lib/seo";
 
 const title = "当社の強み｜肥料貿易の調達・品質・物流対応";
-const description = "国際ネットワーク、柔軟な調達、仕様・品質確認、貿易・物流調整を通じて、肥料原料の安定した取引を支えます。";
+const description = "工場への確認、契約前のサンプルとCOA、日本語での条件提示。株式会社帆岩が肥料原料の取引で行うことです。";
 
 export const metadata = createPageMetadata(title, description, "/strengths");
 

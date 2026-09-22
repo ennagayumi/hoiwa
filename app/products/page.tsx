@@ -39,6 +39,7 @@ type Spotlight = {
   specLabel: string;
   resultLabel: string;
   resultToggle?: string;
+  tabHint?: string;
   chooseHint?: string;
   note: string;
   grades: Grade[];
@@ -164,14 +165,30 @@ function SpotlightBlock({ spotlight, alt }: { spotlight: Spotlight; alt: boolean
   const isTabs = spotlight.layout === "tabs";
   const groups = useMemo(() => gradeGroups(spotlight.grades), [spotlight.grades]);
   const [active, setActive] = useState(0);
+  const sectionId = spotlight.grades.some((grade) => grade.groupId?.startsWith("mg-"))
+    ? "magnesium-sulfate"
+    : spotlight.grades.some((grade) => grade.groupId?.startsWith("as-"))
+      ? "ammonium-sulfate"
+      : undefined;
+
+  const current = groups[Math.min(active, groups.length - 1)] ?? groups[0];
+
+  useEffect(() => {
+    const applyHash = () => {
+      const raw = window.location.hash.replace(/^#/, "");
+      const index = groups.findIndex((group) => group.id === raw || `panel-${group.id}` === raw);
+      if (index >= 0) setActive(index);
+    };
+    applyHash();
+    window.addEventListener("hashchange", applyHash);
+    return () => window.removeEventListener("hashchange", applyHash);
+  }, [groups]);
 
   useEffect(() => {
     const raw = window.location.hash.replace(/^#/, "");
-    const index = groups.findIndex((group) => group.id === raw || `panel-${group.id}` === raw);
-    if (index >= 0) setActive(index);
-  }, [groups]);
-
-  const current = groups[Math.min(active, groups.length - 1)] ?? groups[0];
+    if (!raw || (current?.id !== raw && `panel-${current?.id}` !== raw)) return;
+    document.getElementById(current.id)?.scrollIntoView({ block: "start" });
+  }, [current?.id]);
   const compact = current.grades.length > 1;
   const showChoose = Boolean(spotlight.chooseHint && current.id === "mg-monohydrate");
   const galleries = spotlight.galleries?.filter((gallery) => !gallery.groupId || gallery.groupId === current.id);
@@ -180,27 +197,30 @@ function SpotlightBlock({ spotlight, alt }: { spotlight: Spotlight; alt: boolean
     : "/contact";
 
   return (
-    <section className={`spec-spotlight section${alt ? " spec-spotlight--grid" : ""}${isTabs ? " spec-spotlight--tabs" : ""}`}>
+    <section id={sectionId} className={`spec-spotlight section${alt ? " spec-spotlight--grid" : ""}${isTabs ? " spec-spotlight--tabs" : ""}`}>
       <div className="shell">
         <SectionHeading en={spotlight.tag} title={spotlight.title} intro={spotlight.lead} />
         {isTabs && (
-          <div className="spec-tabs" role="tablist" aria-label={spotlight.title}>
-            {groups.map((group, index) => (
-              <button
-                key={group.id}
-                type="button"
-                role="tab"
-                id={`tab-${group.id}`}
-                aria-selected={active === index}
-                aria-controls={`panel-${group.id}`}
-                onClick={() => setActive(index)}
-              >
-                {group.label}
-              </button>
-            ))}
+          <div className="spec-tabs-wrap">
+            {spotlight.tabHint ? <p className="spec-tabs__hint">{spotlight.tabHint}</p> : null}
+            <div className="spec-tabs" role="tablist" aria-label={spotlight.tabHint ?? spotlight.title}>
+              {groups.map((group, index) => (
+                <button
+                  key={group.id}
+                  type="button"
+                  role="tab"
+                  id={`tab-${group.id}`}
+                  aria-selected={active === index}
+                  aria-controls={group.id}
+                  onClick={() => setActive(index)}
+                >
+                  {group.label}
+                </button>
+              ))}
+            </div>
           </div>
         )}
-        <div role={isTabs ? "tabpanel" : undefined} id={current ? `panel-${current.id}` : undefined} aria-labelledby={isTabs ? `tab-${current.id}` : undefined}>
+        <div role={isTabs ? "tabpanel" : undefined} id={current?.id} aria-labelledby={isTabs ? `tab-${current.id}` : undefined}>
           {showChoose ? <p className="spec-choose">{spotlight.chooseHint}</p> : null}
           <div className={`spec-grades${compact ? " spec-grades--compact" : ""}`}>
             {current.grades.map((grade) => (
@@ -238,7 +258,7 @@ export default function ProductsPage() {
         image="https://images.unsplash.com/photo-1471193945509-9ad0617afabf?auto=format&fit=crop&w=2200&q=85"
         imageAlt={t.products.heroImageAlt}
       />
-      <section className="page-intro section shell">
+      <section className="page-intro page-intro--products section shell">
         <SectionHeading en={t.products.introTag} title={t.products.introTitle} />
         <div>
           <p>{t.products.introP1}</p>
@@ -246,9 +266,15 @@ export default function ProductsPage() {
         </div>
       </section>
 
-      {spotlights.map((spotlight, index) => (
-        <SpotlightBlock key={spotlight.title} spotlight={spotlight as Spotlight} alt={index === 1} />
-      ))}
+      {spotlights
+        .slice()
+        .sort((a, b) => {
+          const rank = (title: string) => (/マグネシウム|Magnesium|硫酸镁/.test(title) ? 0 : 1);
+          return rank(a.title) - rank(b.title);
+        })
+        .map((spotlight, index) => (
+          <SpotlightBlock key={spotlight.title} spotlight={spotlight as Spotlight} alt={index === 1} />
+        ))}
 
       <section id="other" className="lineup section">
         <div className="shell">

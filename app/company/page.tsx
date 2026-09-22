@@ -25,7 +25,7 @@ export default function CompanyPage() {
           </div>
         </div>
       </section>
-      <section className="history section shell">
+      <section id="history" className="history section shell">
         <SectionHeading en={t.company.historyTag} title={t.company.historyTitle} />
         <ol className="history__list">
           {t.company.history.map((item) => (
