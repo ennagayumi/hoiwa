@@ -41,7 +41,7 @@ const coreTranslations = {
       heroDesc: "",
       heroFunctions: [
         { num: "01", title: "肥料原料", desc: "硫酸マグネシウム、硫安" },
-        { num: "02", title: "提携調達", desc: "天津の提携メーカーが製造し、帆岩が窓口" },
+        { num: "02", title: "直接調達", desc: "メーカーから直接調達" },
         { num: "03", title: "対応地域", desc: "日本が中心。アジア・アフリカは案件ごと" },
       ],
       introTag: "About Hoiwa",
@@ -689,7 +689,7 @@ const coreTranslations = {
       heroDesc: "",
       heroFunctions: [
         { num: "01", title: "Fertilizer Materials", desc: "Magnesium sulfate, ammonium sulfate" },
-        { num: "02", title: "Partner Supply", desc: "Made in Tianjin by a partner. Hoiwa is the window." },
+        { num: "02", title: "Direct Supply", desc: "Sourced directly from the producer." },
         { num: "03", title: "Regions", desc: "Japan first. Asia and Africa, deal by deal." },
       ],
       introTag: "About Hoiwa",
@@ -1336,7 +1336,7 @@ const coreTranslations = {
       heroDesc: "",
       heroFunctions: [
         { num: "01", title: "化肥原料", desc: "硫酸镁、硫酸铵" },
-        { num: "02", title: "合作采购", desc: "天津合作厂家生产，帆岩为窗口" },
+        { num: "02", title: "直接采购", desc: "从厂家直接采购" },
         { num: "03", title: "对应地区", desc: "以日本为主。亚洲与非洲按项目" },
       ],
       introTag: "About Hoiwa",
