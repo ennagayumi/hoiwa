@@ -11,14 +11,6 @@ export const navItems = [
 
 export const products = [
   {
-    name: "硫酸マグネシウム",
-    en: "Magnesium Sulfate",
-    description: "主力品目。一水塩（全MgO 24%以上／26%以上）、無水（MgSO₄ 98/99%以上）、七水（MgO 16.06–16.27%）。天津の提携メーカーが製造し、帆岩が日本側の窓口です。",
-    use: "配合肥料・BB、化成肥料原料",
-    package: "25 kg / 50 kg PP袋、1 t ジャンボバッグ（20フィートで約20 t が目安）",
-    region: "中国 → 日本、東南アジア、アフリカ",
-  },
-  {
     name: "硫酸アンモニウム",
     en: "Ammonium Sulfate",
     description: "窒素21%・硫黄24%を含む窒素質肥料。結晶、粒状など、粒径や窒素分に応じた規格を扱います。",
@@ -28,12 +20,20 @@ export const products = [
     image: "/images/products/ammonium-sulfate-granule-scale.jpg",
   },
   {
+    name: "硫酸マグネシウム",
+    en: "Magnesium Sulfate",
+    description: "主力品目。一水塩（全MgO 24%以上／26%以上）、無水（MgSO₄ 98/99%以上）、七水（MgO 16.06–16.27%）。",
+    use: "配合肥料・BB、化成肥料原料",
+    package: "25 kg / 50 kg PP袋、1 t ジャンボバッグ（20フィートで約20 t が目安）",
+    region: "中国 → 日本、東南アジア、アフリカ",
+  },
+  {
     name: "尿素",
     en: "Urea",
-    description: "窒素46%を含む代表的な窒素質肥料。粒状（グラニュラー）とプリルに対応。",
-    use: "直接施用、配合肥料原料、工業用",
-    package: "50 kg PP袋、1 t ジャンボバッグ、バルク",
-    region: "中国ほか → 日本、東南アジア、アフリカ",
+    description: "農業用グレード。全窒素（乾基）46.4%以上、ビウレット0.9%以下。白色の球形粒。",
+    use: "配合肥料原料、直接施用",
+    package: "50 kg PP袋（内袋あり）、1,000 kg ジャンボバッグ",
+    region: "中国 → 日本、東南アジア、アフリカ",
   },
   {
     name: "カリ肥料",

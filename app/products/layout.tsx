@@ -3,7 +3,7 @@ import { products } from "@/data/site";
 import { absoluteUrl, createPageJsonLd, createPageMetadata, organizationId } from "@/lib/seo";
 
 const title = "肥料原料｜硫酸マグネシウム・硫酸アンモニウム";
-const description = "主力は硫酸マグネシウムと硫酸アンモニウムです。天津の提携メーカーが製造し、帆岩が日本側の窓口です。規格、粒度、包装は、サンプルとロットのCOAで確認してから契約します。";
+const description = "主力は硫酸マグネシウムと硫酸アンモニウムです。硫酸マグネシウムは天津の提携メーカーが製造し、帆岩が日本側の窓口です。規格、粒度、包装は、サンプルとロットのCOAで確認してから契約します。";
 
 export const metadata = createPageMetadata(title, description, "/products");
 

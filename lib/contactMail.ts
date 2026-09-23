@@ -53,7 +53,7 @@ export function parseContactPayload(input: unknown): { ok: true; data: ContactPa
     message: clip(raw.message, MAX.message),
   };
 
-  if (!data.company || !data.name || !data.country || !data.email || !data.inquiryType || !data.message) {
+  if (!data.company || !data.name || !data.email || !data.inquiryType || !data.product) {
     return { ok: false, error: "missing_fields" };
   }
   if (!EMAIL_RE.test(data.email)) return { ok: false, error: "invalid_email" };
@@ -72,20 +72,16 @@ function escapeHtml(value: string): string {
 function buildMessage(data: ContactPayload): { subject: string; text: string; html: string } {
   const rows: [string, string][] = [
     ["種別", data.inquiryType],
-    ["会社名", data.company],
-    ["お名前", data.name],
-    ["国・地域", data.country],
+    ["貴社名", data.company],
+    ["ご担当者様名", data.name],
     ["メール", data.email],
     ["電話", data.phone],
-    ["希望商品", data.product],
-    ["数量", data.quantity],
-    ["仕様・用途", data.spec],
-    ["仕向港", data.port],
-    ["貿易条件", data.terms],
+    ["ご希望の製品", data.product],
+    ["希望数量（年間・トン）", data.quantity],
   ];
 
   const filled = rows.filter(([, value]) => value);
-  const text = [...filled.map(([label, value]) => `${label}: ${value}`), "", "お問い合わせ内容", data.message].join("\n");
+  const text = [...filled.map(([label, value]) => `${label}: ${value}`), ...(data.message ? ["", "その他特記事項", data.message] : [])].join("\n");
   const htmlRows = filled
     .map(([label, value]) => `<tr><th align="left" style="padding:6px 16px 6px 0;color:#555;white-space:nowrap">${escapeHtml(label)}</th><td style="padding:6px 0">${escapeHtml(value)}</td></tr>`)
     .join("");
@@ -95,8 +91,7 @@ function buildMessage(data: ContactPayload): { subject: string; text: string; ht
     text,
     html: `<div style="font-family:sans-serif;font-size:14px;line-height:1.6;color:#102840">
       <table>${htmlRows}</table>
-      <p style="margin:24px 0 8px;font-weight:600">お問い合わせ内容</p>
-      <p style="white-space:pre-wrap">${escapeHtml(data.message)}</p>
+      ${data.message ? `<p style="margin:24px 0 8px;font-weight:600">その他特記事項</p><p style="white-space:pre-wrap">${escapeHtml(data.message)}</p>` : ""}
     </div>`,
   };
 }

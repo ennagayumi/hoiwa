@@ -121,11 +121,11 @@ function GradeCard({
           )}
         </div>
         {photos && photos.length > 0 && (
-          <div className="spec-spotlight__photos">
+          <div className={`spec-spotlight__photos${photos.length === 1 ? " spec-spotlight__photos--single" : ""}`}>
             {photos.map((photo) => (
               <figure key={photo.src}>
                 <Image src={photo.src} alt={photo.alt} width={774} height={1024} sizes="(max-width: 640px) 50vw, 260px" />
-                <figcaption>{photo.caption}</figcaption>
+                {photo.caption ? <figcaption>{photo.caption}</figcaption> : null}
               </figure>
             ))}
           </div>
@@ -147,12 +147,12 @@ function GalleryBlock({ gallery }: { gallery: Gallery }) {
                 <source src={item.src} type="video/mp4" />
               </video>
               <img className="spec-spotlight__poster" src={item.poster} alt="" />
-              <figcaption>{item.caption}</figcaption>
+              {item.caption ? <figcaption>{item.caption}</figcaption> : null}
             </figure>
           ) : (
             <figure key={item.src}>
               <Image src={item.src} alt={item.alt} width={768} height={1024} sizes="(max-width: 640px) 50vw, 280px" />
-              <figcaption>{item.caption}</figcaption>
+              {item.caption ? <figcaption>{item.caption}</figcaption> : null}
             </figure>
           ),
         )}
@@ -169,7 +169,9 @@ function SpotlightBlock({ spotlight, alt }: { spotlight: Spotlight; alt: boolean
     ? "magnesium-sulfate"
     : spotlight.grades.some((grade) => grade.groupId?.startsWith("as-"))
       ? "ammonium-sulfate"
-      : undefined;
+      : spotlight.grades.some((grade) => grade.groupId?.startsWith("urea"))
+        ? "urea"
+        : undefined;
 
   const current = groups[Math.min(active, groups.length - 1)] ?? groups[0];
 

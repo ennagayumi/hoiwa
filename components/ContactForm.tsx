@@ -6,23 +6,14 @@ import { contactEmail } from "@/data/site";
 import { useLanguage } from "@/context/LanguageContext";
 
 type Status = "idle" | "sending" | "sent" | "error";
-type FieldId = "company" | "name" | "country" | "email" | "phone" | "product" | "quantity" | "spec" | "port" | "terms";
+type FieldId = "company" | "name" | "email" | "phone" | "quantity";
 type Field = { id: FieldId; type: string; required?: boolean; autoComplete?: string };
 
 const contactFields: Field[] = [
   { id: "company", type: "text", required: true, autoComplete: "organization" },
   { id: "name", type: "text", required: true, autoComplete: "name" },
-  { id: "country", type: "text", required: true, autoComplete: "country-name" },
   { id: "email", type: "email", required: true, autoComplete: "email" },
   { id: "phone", type: "tel", autoComplete: "tel" },
-];
-
-const detailFields: Field[] = [
-  { id: "product", type: "text" },
-  { id: "quantity", type: "text" },
-  { id: "spec", type: "text" },
-  { id: "port", type: "text" },
-  { id: "terms", type: "text" },
 ];
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -50,11 +41,11 @@ export default function ContactForm() {
     const found: Partial<Record<string, string>> = {};
 
     if (!value("inquiryType")) found.inquiryType = t.contact.invalidSelect;
+    if (!value("product")) found.product = t.contact.invalidProduct;
     for (const { id, required } of contactFields) {
       if (required && !value(id)) found[id] = t.contact.invalidRequired;
     }
     if (!found.email && value("email") && !EMAIL_RE.test(value("email"))) found.email = t.contact.invalidEmail;
-    if (!value("message")) found.message = t.contact.invalidRequired;
     if (!data.get("consent")) found.consent = t.contact.invalidConsent;
 
     return found;
@@ -107,7 +98,7 @@ export default function ContactForm() {
           name={id}
           type={type}
           autoComplete={autoComplete}
-          defaultValue={id === "product" ? presetProduct : undefined}
+          defaultValue={undefined}
           aria-invalid={message ? true : undefined}
           aria-describedby={message ? `${id}-error` : undefined}
           onInput={() => clearError(id)}
@@ -149,62 +140,61 @@ export default function ContactForm() {
         )}
       </div>
 
-      <fieldset className="form-block">
-        <legend>
-          <b>01</b>
-          {t.contact.step1}
-          <em className="is-required">{t.contact.required}</em>
-        </legend>
-        <div className="option-grid">
-          {t.contact.inquiryOptions.map((option) => (
-            <label key={option.label} className="option-card">
-              <input type="radio" name="inquiryType" value={option.label} onChange={() => clearError("inquiryType")} />
-              <span className="option-card__body">
-                <strong>{option.label}</strong>
-                <small>{option.desc}</small>
-              </span>
-            </label>
-          ))}
-        </div>
-        {errors.inquiryType && <strong className="field-error">{errors.inquiryType}</strong>}
-      </fieldset>
+      <div className="form-stack">
+        {contactFields.map(renderField)}
 
-      <fieldset className="form-block">
-        <legend>
-          <b>02</b>
-          {t.contact.step2}
-        </legend>
-        <div className="form-grid">{contactFields.map(renderField)}</div>
-      </fieldset>
+        <label className="form-field">
+          <span>
+            {t.contact.inquiryLabel}
+            <em className="is-required">{t.contact.required}</em>
+          </span>
+          <select
+            name="inquiryType"
+            defaultValue=""
+            aria-invalid={errors.inquiryType ? true : undefined}
+            onChange={() => clearError("inquiryType")}
+          >
+            <option value="">{t.contact.inquiryPlaceholder}</option>
+            {t.contact.inquiryOptions.map((option) => (
+              <option key={option.label} value={option.label}>
+                {option.label}
+              </option>
+            ))}
+          </select>
+          {errors.inquiryType && <strong className="field-error">{errors.inquiryType}</strong>}
+        </label>
 
-      <fieldset className="form-block">
-        <legend>
-          <b>03</b>
-          {t.contact.step3}
-        </legend>
+        <label className="form-field">
+          <span>
+            {t.contact.fields.product}
+            <em className="is-required">{t.contact.required}</em>
+          </span>
+          <select
+            name="product"
+            defaultValue={t.contact.productOptions.includes(presetProduct) ? presetProduct : ""}
+            aria-invalid={errors.product ? true : undefined}
+            onChange={() => clearError("product")}
+          >
+            <option value="">{t.contact.productPlaceholder}</option>
+            {t.contact.productOptions.map((option) => (
+              <option key={option} value={option}>
+                {option}
+              </option>
+            ))}
+          </select>
+          {errors.product && <strong className="field-error">{errors.product}</strong>}
+        </label>
+
+        {renderField({ id: "quantity", type: "text" })}
+
         <label className="form-field">
           <span>
             {t.contact.messageLabel}
-            <em className="is-required">{t.contact.required}</em>
+            <em className="is-optional">{t.contact.optional}</em>
           </span>
-          <textarea
-            name="message"
-            rows={7}
-            placeholder={t.contact.messagePlaceholder}
-            aria-invalid={errors.message ? true : undefined}
-            onInput={() => clearError("message")}
-          />
-          {errors.message && <strong className="field-error">{errors.message}</strong>}
+          <textarea name="message" rows={6} placeholder={t.contact.messagePlaceholder} />
         </label>
-
-        <details className="form-details" open={Boolean(presetProduct) || undefined}>
-          <summary>{t.contact.detailsToggle}</summary>
-          <div className="form-details__body">
-            <p>{t.contact.detailsHint}</p>
-            <div className="form-grid">{detailFields.map(renderField)}</div>
-          </div>
-        </details>
-      </fieldset>
+      </div>
 
       <label className="form-honeypot" aria-hidden="true">
         <span>Website</span>
