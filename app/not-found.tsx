@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
+import { brandTitle } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "ページが見つかりません",
@@ -9,7 +10,8 @@ export const metadata: Metadata = {
   // be indexed and must not declare the home page as its canonical URL.
   robots: { index: false, follow: true },
   alternates: {},
-  openGraph: { type: "website", locale: "ja_JP", siteName: "帆岩（ほいわ）", title: "ページが見つかりません" },
+  openGraph: { type: "website", locale: "ja_JP", siteName: brandTitle, title: `ページが見つかりません｜${brandTitle}` },
+  twitter: { card: "summary_large_image", title: `ページが見つかりません｜${brandTitle}`, description: "お探しのページは移動または削除された可能性があります。" },
 };
 
 export default function NotFound() {

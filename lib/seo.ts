@@ -9,12 +9,13 @@ const rawSiteUrl = process.env.NEXT_PUBLIC_SITE_URL?.trim() || "https://hoiwajap
 export const siteUrl = rawSiteUrl.replace(/\/+$/, "");
 
 export const siteName = "帆岩";
-export const siteNameEn = "Hoiwa";
+export const siteNameEn = "HOIWA";
 export const siteNameKana = "ほいわ";
+export const brandTitle = `${siteName}（${siteNameEn}）`;
 export const brandWithKana = `${siteName}（${siteNameKana}）`;
-export const siteAlternateNames = [siteNameKana, siteNameEn, operatorName];
+export const siteAlternateNames = [siteNameKana, siteNameEn, "Hoiwa", operatorName];
 export const siteDescription =
-  "帆岩（ほいわ）は、京古斎合同会社の屋号です。硫酸マグネシウムと硫酸アンモニウムを中心に、規格・COA・納期を日本語で確認して供給します。硫酸マグネシウムは天津の提携メーカーが製造し、帆岩が日本側の窓口です。";
+  "帆岩は京古斎合同会社が運営する屋号です。中国の提携メーカーと連携し、規格・COA・納期を明確にして肥料原料を日本市場へ供給します。千葉県船橋市。";
 
 // Bump when page content changes so <lastmod> stays truthful.
 // Google ignores <lastmod> entirely if it is obviously auto-generated.
@@ -22,6 +23,11 @@ export const siteLastModified = "2026-10-03";
 
 export const organizationId = `${siteUrl}/#organization`;
 export const websiteId = `${siteUrl}/#website`;
+
+/** Document title suffix. Home is passed in already complete. */
+export function withBrandTitle(title: string): string {
+  return title.includes(brandTitle) ? title : `${title}｜${brandTitle}`;
+}
 
 /**
  * Absolute URL for a route, without a trailing slash. This matches both
@@ -75,6 +81,7 @@ export function createPageMetadata(
   options?: { noIndex?: boolean },
 ): Metadata {
   const canonical = absoluteUrl(path);
+  const fullTitle = withBrandTitle(title);
 
   return {
     title,
@@ -87,8 +94,8 @@ export function createPageMetadata(
       type: "website",
       locale: "ja_JP",
       alternateLocale: ["en_US", "zh_CN"],
-      siteName: brandWithKana,
-      title,
+      siteName: brandTitle,
+      title: fullTitle,
       description,
       url: canonical,
       images: [
@@ -96,13 +103,13 @@ export function createPageMetadata(
           url: "/opengraph-image",
           width: 1200,
           height: 630,
-          alt: `${siteName}｜肥料・肥料原料の国際貿易`,
+          alt: `${brandTitle}｜肥料・肥料原料の輸入販売`,
         },
       ],
     },
     twitter: {
       card: "summary_large_image",
-      title,
+      title: fullTitle,
       description,
       images: ["/opengraph-image"],
     },
@@ -132,7 +139,7 @@ export function createWebPageJsonLd(path: SitePath, title: string, description: 
     "@type": route.schemaType,
     "@id": `${url}#webpage`,
     url,
-    name: title,
+    name: withBrandTitle(title),
     description,
     inLanguage: "ja",
     isPartOf: { "@id": websiteId },

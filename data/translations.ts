@@ -46,7 +46,7 @@ const coreTranslations = {
         { num: "02", title: "直接調達", desc: "メーカーから直接調達" },
         { num: "03", title: "対応地域", desc: "日本が中心。アジア・アフリカは案件ごと" },
       ],
-      introTag: "About Hoiwa",
+      introTag: "About HOIWA",
       introTitle: "日本市場向けの\n肥料原料を供給する。",
       introP1: "帆岩（ほいわ）は、京古斎合同会社の屋号です。中国の提携メーカーと連携し、日本市場向けに肥料原料を供給します。千葉県船橋市を拠点に、規格・COA・納期を明確にした実務対応を行います。",
       introLink: "沿革は会社概要へ",
@@ -515,7 +515,7 @@ const coreTranslations = {
       outline: [
         { dt: "屋号", dd: "帆岩（ほいわ）" },
         { dt: "読み", dd: "ほいわ" },
-        { dt: "英文表記", dd: "Hoiwa" },
+        { dt: "英文表記", dd: "HOIWA" },
         { dt: "運営", dd: operatorName },
         { dt: "代表社員", dd: representativeName },
         { dt: "設立", dd: establishedOn },
@@ -680,7 +680,7 @@ const coreTranslations = {
       contact: "Contact Us",
       privacy: "Privacy Policy",
       credits: "Media Credits",
-      companyName: `Hoiwa / ${operatorName}`,
+      companyName: "HOIWA (operated by Kyokosai LLC)",
       copyright: `Copyright © ${operatorName} All Rights Reserved.`,
       emailLabel: "Email",
     },
@@ -700,9 +700,9 @@ const coreTranslations = {
         { num: "02", title: "Direct Supply", desc: "Sourced directly from the producer." },
         { num: "03", title: "Regions", desc: "Japan first. Asia and Africa, deal by deal." },
       ],
-      introTag: "About Hoiwa",
+      introTag: "About HOIWA",
       introTitle: "Fertilizer materials for the Japanese market.",
-      introP1: "Hoiwa (ほいわ) is the trade name of 京古斎合同会社. Working with partner producers in China, we supply fertilizer materials to the Japanese market from Funabashi, Chiba, and handle specifications, COA, and delivery dates in practical terms.",
+      introP1: "HOIWA (operated by Kyokosai LLC) works with partner producers in China and supplies fertilizer materials to the Japanese market from Funabashi, Chiba, with specifications, COA, and delivery dates stated clearly.",
       introLink: "History is on the company page",
       featuredTag: "Core Products",
       featuredTitle: "Featured materials",
@@ -758,7 +758,7 @@ const coreTranslations = {
       strengthsBtn: "View Our Strengths",
       networkTag: "Global Network",
       networkTitle: "A partner in China, and a window in Funabashi.",
-      networkIntro: "The partner in China checks with the plant. Hoiwa presents terms to buyers in Japan. Southeast Asia and Africa start only after a buyer is in place.",
+      networkIntro: "The partner in China checks with the plant. HOIWA presents terms to buyers in Japan. Southeast Asia and Africa start only after a buyer is in place.",
       networkLink: "View Global Network",
       flowTag: "Trade Flow",
       flowTitle: "From Initial Consultation to Post-Delivery.",
@@ -799,11 +799,11 @@ const coreTranslations = {
     products: {
       heroTitle: "Fertilizer Materials",
       heroImageAlt: "Fertilizer being applied to farmland, illustrating the use of ammonium sulfate, urea, and potash",
-      heroLead: "Core products are magnesium sulfate and ammonium sulfate. Magnesium sulfate is made by a partner producer in Tianjin; Hoiwa is the Japan window. Spec, particle size, and packaging are contracted only after the sample and the lot COA are checked.",
+      heroLead: "Core products are magnesium sulfate and ammonium sulfate. Magnesium sulfate is made by a partner producer in Tianjin; HOIWA is the Japan window. Spec, particle size, and packaging are contracted only after the sample and the lot COA are checked.",
       introTag: "Core Business",
       introTitle: "Contract on checked specs —\nfor blenders and BB plants.",
-      introP1: "Hoiwa supplies fertilizer materials to trading houses, compound-fertilizer plants, and BB plants. The two core products are detailed above. Urea, potash, and phosphates are listed below as inquiry items. The list is not a standing inventory.",
-      introP2: "Sourcing is centered in China. Magnesium sulfate is made by a partner producer in Tianjin; Hoiwa is the Japan window. We share a physical sample and the lot COA before shipment, and contract on those checked specifications.",
+      introP1: "HOIWA supplies fertilizer materials to trading houses, compound-fertilizer plants, and BB plants. The two core products are detailed above. Urea, potash, and phosphates are listed below as inquiry items. The list is not a standing inventory.",
+      introP2: "Sourcing is centered in China. Magnesium sulfate is made by a partner producer in Tianjin; HOIWA is the Japan window. We share a physical sample and the lot COA before shipment, and contract on those checked specifications.",
       spotlights: [
       {
         tag: "Core Product",
@@ -1068,7 +1068,7 @@ const coreTranslations = {
       introTag: "Our Approach",
       introTitle: "Beyond Selling Machinery: Preparing Full Site Integration.",
       introP1: "International trade in heavy machinery involves complex variables: application, throughput, voltage/power, dimensions, operating environment, and maintenance capability.",
-      introP2: "Hoiwa stands between buyers and manufacturers to organize technical specs, export packaging, shipping, customs clearance, and delivery.",
+      introP2: "HOIWA stands between buyers and manufacturers to organize technical specs, export packaging, shipping, customs clearance, and delivery.",
       scopeTag: "Scope",
       scopeTitle: "Main Business Areas",
       items: [
@@ -1095,7 +1095,7 @@ const coreTranslations = {
       introTag: "What We Value",
       introTitle: "Not \"we will confirm\" — we deliver what has been confirmed.",
       introP1: "There are many fertilizer traders. What buyers actually need to know is which plant, which grade, when, and in what condition the product arrives.",
-      introP2: "Hoiwa operates from two bases — Japan and our partner in China. Producer negotiation, sampling, particle-size measurement, and analysis-report checks are completed at origin before we present terms to the buyer.",
+      introP2: "HOIWA operates from two bases — Japan and our partner in China. Producer negotiation, sampling, particle-size measurement, and analysis-report checks are completed at origin before we present terms to the buyer.",
       items: [
         { title: "Confirm terms with the partner producer in China", desc: "Through our partner in China, we correspond with the plant in Chinese. Spec and timing are checked with the plant each time, then answered." },
         { title: "Share the sample and the analysis before contract", desc: "What we check depends on the product. For ammonium sulfate we look at particle size, nitrogen, free acid, and moisture." },
@@ -1123,20 +1123,20 @@ const coreTranslations = {
     },
     network: {
       heroTitle: "Regions where someone can confirm",
-      heroLead: "The partner in China checks with the plant. Hoiwa presents terms to buyers in Japan.",
+      heroLead: "The partner in China checks with the plant. HOIWA presents terms to buyers in Japan.",
       introTag: "China · Japan · Asia · Africa",
       introTitle: "We move once the counterparty and the terms are set.",
       mapAria: "Trade network map with accurate borders showing China, Japan, Southeast Asia, and Africa",
       mapLabels: { cn: "China", jp: "Japan", sea: "SE Asia", af: "Africa" },
       regions: [
         { title: "China", desc: "Made by a partner producer in Tianjin. Plant checks, samples, and pre-shipment matching are done by the partner." },
-        { title: "Japan", desc: "Hoiwa settles use, particle size, packaging, and delivery with the buyer in Japanese, and passes them to the partner." },
+        { title: "Japan", desc: "HOIWA settles use, particle size, packaging, and delivery with the buyer in Japanese, and passes them to the partner." },
         { title: "Southeast Asia", desc: "Materials for compound fertilizer can be discussed. Transit time and freight are quoted by route and season." },
         { title: "Africa", desc: "We assemble a shipment after quality, packaging, and port are fixed. There is no local office." },
       ],
       noteTag: "Our Approach",
       noteTitle: "The China side and the Japan side have different roles.",
-      noteBody: "The partner in China talks with the plant. Hoiwa settles terms with the buyer in Japan.",
+      noteBody: "The partner in China talks with the plant. HOIWA settles terms with the buyer in Japan.",
     },
     company: {
       heroTitle: "Company Profile",
@@ -1146,7 +1146,7 @@ const coreTranslations = {
       messageHeadline: "Make Chinese origin a supply you can trust.",
       messageParagraphs: [
         "Fertilizer materials made in China have long met the view that the price is reasonable, but the quality is only passable.",
-        "Hoiwa works to change that view, one shipment at a time. Even when the origin is China, we check the specification and the goods, and deliver sound quality at a fair price. Our work is to bring good material to more customers.",
+        "HOIWA works to change that view, one shipment at a time. Even when the origin is China, we check the specification and the goods, and deliver sound quality at a fair price. Our work is to bring good material to more customers.",
         "We want to be a partner our Japanese customers can trust as responsible, sincere, and reliable. To that end, we write the terms first, and we deliver on the terms we wrote.",
       ],
       messageRole: "Representative member",
@@ -1162,18 +1162,18 @@ const coreTranslations = {
       historyTag: "History",
       historyTitle: "Our History",
       history: [
-        { year: "2026", text: "京古斎合同会社 established in Funabashi, Chiba. Supply of fertilizer materials to Japan began under the trade name Hoiwa." },
+        { year: "2026", text: "京古斎合同会社 established in Funabashi, Chiba. Supply of fertilizer materials to Japan began under the trade name HOIWA (operated by Kyokosai LLC)." },
       ],
       outlineTag: "Company Profile",
       outlineTitle: "Corporate Overview",
       outline: [
-        { dt: "Trade name", dd: "Hoiwa (帆岩 / ほいわ)" },
+        { dt: "Trade name", dd: "HOIWA (operated by Kyokosai LLC)" },
         { dt: "Operator", dd: operatorName },
         { dt: "Representative member", dd: representativeName },
         { dt: "Established", dd: "30 September 2026" },
         { dt: "Capital", dd: "JPY 6 million" },
         { dt: "Address", dd: `${officeAddressLine} (Funabashi, Chiba, Japan)` },
-        { dt: "Partner producer", dd: "Manufactured by a partner producer in Tianjin. Hoiwa is the Japan window." },
+        { dt: "Partner producer", dd: "Manufactured by a partner producer in Tianjin. HOIWA is the Japan window." },
         { dt: "Core Business", dd: "Import, export and domestic sales of fertilizers and fertilizer raw materials; chemicals trade. International sourcing of machinery and equipment also available." },
         { dt: "Main Products", dd: "Ammonium Sulfate, Urea, Potassium Chloride, Potassium Sulfate, Ammonium Phosphates, Superphosphates, NPK compounds, magnesium sulfate, magnesium oxide, magnesium chloride, micronutrient salts (Zn, Fe, Mn)" },
         { dt: "Contact", dd: contactEmail },
@@ -1184,13 +1184,13 @@ const coreTranslations = {
     },
     news: {
       heroTitle: "News & Updates",
-      heroLead: "News and business updates from Hoiwa.",
+      heroLead: "News and business updates from HOIWA.",
       filterAll: "All",
       filterNotice: "Announcements",
       filterBusiness: "Business News",
       newsNote: "",
       items: [
-        { date: "2026", category: "Announcements", title: "京古斎合同会社 established. Supply of fertilizer materials to Japan began under the trade name Hoiwa." },
+        { date: "2026", category: "Announcements", title: "京古斎合同会社 established. Supply of fertilizer materials to Japan began under the trade name HOIWA (operated by Kyokosai LLC)." },
       ],
     },
     contact: {
@@ -1259,7 +1259,7 @@ const coreTranslations = {
     },
     privacy: {
       heroTitle: "Privacy Policy",
-      intro: "京古斎合同会社 (\"we\"), using the trade name Hoiwa, handles personal information for fertilizer-material inquiries and trade correspondence in line with the Act on the Protection of Personal Information and other applicable laws. This policy applies to this website, the inquiry form, and email sent to us.",
+      intro: "HOIWA (operated by Kyokosai LLC) handles personal information for fertilizer-material inquiries and trade correspondence in line with the Act on the Protection of Personal Information and other applicable laws. This policy applies to this website, the inquiry form, and email sent to us.",
       sections: [
         {
           title: "1. Information we collect",
@@ -1291,7 +1291,7 @@ const coreTranslations = {
         },
         {
           title: "8. Contact",
-          body: `${operatorName} (Hoiwa)\n${officeAddressLine}\nFunabashi, Chiba, Japan\nPersonal information inquiries\n${contactEmail}`,
+          body: `HOIWA (operated by Kyokosai LLC)\n${officeAddressLine}\nFunabashi, Chiba, Japan\nPersonal information inquiries\n${contactEmail}`,
         },
         {
           title: "9. Changes",
@@ -1332,8 +1332,8 @@ const coreTranslations = {
       contact: "联系我们",
       privacy: "隐私政策",
       credits: "素材致谢",
-      companyName: "株式会社帆岩 / Hoiwa Co., Ltd.",
-      copyright: "Copyright © 株式会社帆岩 All Rights Reserved.",
+      companyName: "HOIWA (operated by Kyokosai LLC)",
+      copyright: "Copyright © Kyokosai LLC All Rights Reserved.",
       emailLabel: "邮箱",
     },
     contactBand: {
@@ -1352,9 +1352,9 @@ const coreTranslations = {
         { num: "02", title: "直接采购", desc: "从厂家直接采购" },
         { num: "03", title: "对应地区", desc: "以日本为主。亚洲与非洲按项目" },
       ],
-      introTag: "About Hoiwa",
+      introTag: "About HOIWA",
       introTitle: "面向日本市场供应化肥原料。",
-      introP1: "株式会社帆岩是与中国合作厂家协同、面向日本市场供应化肥原料的专业商社。以东京为据点，就规格、COA 与交期作明确的实务对应。",
+      introP1: "帆岩（HOIWA）是与中国合作厂家协同、面向日本市场供应化肥原料的专业商社。以千叶县船桥市为据点，就规格、COA 与交期作明确的实务对应。",
       introLink: "沿革见公司概要",
       featuredTag: "Core Products",
       featuredTitle: "代表品种",
@@ -1409,7 +1409,7 @@ const coreTranslations = {
       strengthsTitle: "支撑交易的实务。",
       strengthsBtn: "查看我们的优势",
       networkTag: "Global Network",
-      networkTitle: "中国的合作方，与东京的窗口。",
+      networkTitle: "中国的合作方，与千叶县船桥市的窗口。",
       networkIntro: "与工厂的确认由中国合作公司进行，向日本客户提出条件由帆岩进行。东南亚与非洲，从已确定交易方的项目开始对应。",
       networkLink: "查看业务区域",
       flowTag: "Trade Flow",
@@ -1454,7 +1454,7 @@ const coreTranslations = {
       heroLead: "主力是硫酸镁与硫酸铵。硫酸镁由天津的合作厂家生产，帆岩是日本窗口。规格、粒度和包装，在确认样品与该批次COA后再签约。",
       introTag: "Core Business",
       introTitle: "从产地工厂，到客户仓库。",
-      introP1: "株式会社帆岩面向商社、复合肥工厂与BB工厂供应化肥原料。页面上方是硫酸镁与硫酸铵的代表规格。尿素、钾肥、磷肥等请从下方列表询价。列表不是常备库存。",
+      introP1: "帆岩（HOIWA）面向商社、复合肥工厂与BB工厂供应化肥原料。页面上方是硫酸镁与硫酸铵的代表规格。尿素、钾肥、磷肥等请从下方列表询价。列表不是常备库存。",
       introP2: "采购以中国为中心。硫酸镁由天津的合作厂家生产，帆岩是日本窗口。装船前提供实物样品与该批次检测报告，按已确认的规格签约。",
       spotlights: [
       {
@@ -1693,7 +1693,7 @@ const coreTranslations = {
       introTag: "Our Approach",
       introTitle: "不仅是设备销售，更是落地条件的全面整理。",
       introP1: "在机械设备的国际贸易中，用途、产能、电源电压、尺寸、安装环境及售后维护等预先核查事项极为复杂。",
-      introP2: "株式会社帆岩立足于客户与制造厂家之间，梳理关键技术条件，协调出口包装、装船、通关及现场交付。",
+      introP2: "帆岩（HOIWA）立足于客户与制造厂家之间，梳理关键技术条件，协调出口包装、装船、通关及现场交付。",
       scopeTag: "Scope",
       scopeTitle: "主营业务领域",
       items: [
@@ -1720,7 +1720,7 @@ const coreTranslations = {
       introTag: "What We Value",
       introTitle: "不是「我们会确认」，而是交出已确认的结果。",
       introP1: "化肥原料贸易商很多，但客户真正想知道的是：哪家工厂、什么规格的货，何时、以什么状态到达。",
-      introP2: "株式会社帆岩与中国合作公司两地协同，在产地完成厂家谈判、取样、粒度实测与检测报告核对，再以日语向客户提出明确条件。",
+      introP2: "帆岩（HOIWA）与中国合作公司两地协同，在产地完成厂家谈判、取样、粒度实测与检测报告核对，再以日语向客户提出明确条件。",
       items: [
         { title: "与中国合作厂家确认条件", desc: "通过中国的合作公司，用中文与工厂沟通。规格和交期每次向工厂确认后再答复。" },
         { title: "签约前共享样品与检测报告", desc: "确认项目因品种而异。硫酸铵看粒径、氮、游离酸和水分。" },
@@ -1762,7 +1762,7 @@ const coreTranslations = {
       ],
       noteTag: "Our Approach",
       noteTitle: "两地协同，同时站在产地与客户两侧。",
-      noteBody: "日本的株式会社帆岩与中国的合作公司协同运作：产地端负责厂家谈判与检验，需求端负责条件梳理与交付协调，均以当地语言完成。面向东南亚与非洲的项目，则按需与各地商社、物流企业及检验机构组建执行团队。",
+      noteBody: "日本的帆岩（HOIWA）与中国的合作公司协同运作：产地端负责厂家谈判与检验，需求端负责条件梳理与交付协调，均以当地语言完成。面向东南亚与非洲的项目，则按需与各地商社、物流企业及检验机构组建执行团队。",
     },
     company: {
       heroTitle: "公司信息",
@@ -1780,29 +1780,29 @@ const coreTranslations = {
       history: [
         { year: "1991", text: "作为集团渊源，开展土木基础工程及工程机械制造销售（中国）。" },
         { year: "2022", text: "开展化工品与化肥原料进出口。与合作公司协同，直接向厂家采购。" },
-        { year: "2026", text: "设立东京据点。全面推进化肥及化肥原料供应。" },
+        { year: "2026", text: "设立千叶县船桥市据点。全面推进化肥及化肥原料供应。" },
       ],
       outlineTag: "Company Profile",
       outlineTitle: "公司概要",
       outline: [
-        { dt: "公司名称", dd: "株式会社帆岩 (Hoiwa Co., Ltd.)" },
+        { dt: "公司名称", dd: "HOIWA (operated by Kyokosai LLC)" },
         { dt: "集团渊源", dd: "1991年（中国。土木基础工程及工程机械制造销售）" },
         { dt: "化肥与化工品", dd: "2022年〜" },
-        { dt: "日本据点", dd: "2026年（东京）" },
+        { dt: "日本据点", dd: "2026年（千叶县船桥市）" },
         { dt: "合作厂家", dd: "由天津的合作厂家生产。帆岩为日本窗口。" },
         { dt: "主营业务", dd: "化肥及化肥原料进出口与国内销售、化工品进出口。亦承接机械设备国际采购" },
         { dt: "主要经营品种", dd: "硫酸铵、尿素、氯化钾、硫酸钾、磷酸铵、过磷酸钙、NPK复合肥、硫酸镁、氧化镁、氯化镁、微量元素盐（Zn、Fe、Mn）" },
-        { dt: "联系方式", dd: "takeda@hoiwajapan.com" },
+        { dt: "联系方式", dd: "info@hoiwajapan.com" },
       ],
       accessTag: "Access",
       accessTitle: "地理位置与交通",
       accessSpan: "公司地址与交通地图",
-      accessStrong: "东京据点地址确定后发布",
+      accessStrong: "千叶县船桥市据点地址确定后发布",
       accessP: "在此之前，请通过邮件或咨询表单与我们联系。",
     },
     news: {
       heroTitle: "新闻动态",
-      heroLead: "发布株式会社帆岩的最新公告与企业动态信息。",
+      heroLead: "发布帆岩（HOIWA）的最新公告与企业动态信息。",
       filterAll: "全部",
       filterNotice: "公告",
       filterBusiness: "业务动态",
@@ -1810,7 +1810,7 @@ const coreTranslations = {
       items: [
         { date: "1991", category: "业务动态", title: "作为集团渊源，开展土木基础工程及工程机械制造销售（中国）。" },
         { date: "2022", category: "业务动态", title: "开始化工品与化肥原料进出口业务。" },
-        { date: "2026", category: "公告", title: "设立东京据点，全面推进化肥及化肥原料供应。" },
+        { date: "2026", category: "公告", title: "设立千叶县船桥市据点，全面推进化肥及化肥原料供应。" },
       ],
     },
     contact: {
@@ -1879,7 +1879,7 @@ const coreTranslations = {
     },
     privacy: {
       heroTitle: "隐私政策",
-      intro: "株式会社帆岩（以下简称“本公司”）在化肥原料询价与交易联络中，遵守《个人信息保护法》及其他相关法令，按下述方式处理个人信息。本政策适用于本网站、咨询表单以及发送给本公司的邮件。",
+      intro: "帆岩（HOIWA）（以下简称“本公司”）在化肥原料询价与交易联络中，遵守《个人信息保护法》及其他相关法令，按下述方式处理个人信息。本政策适用于本网站、咨询表单以及发送给本公司的邮件。",
       sections: [
         {
           title: "1. 收集的信息",
@@ -1911,7 +1911,7 @@ const coreTranslations = {
         },
         {
           title: "8. 联系方式",
-          body: "株式会社帆岩\n个人信息相关咨询\ntakeda@hoiwajapan.com",
+          body: "HOIWA (operated by Kyokosai LLC)\n个人信息相关咨询\ninfo@hoiwajapan.com",
         },
         {
           title: "9. 修订",

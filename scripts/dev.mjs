@@ -17,7 +17,7 @@ for (const file of [".env.local", ".env"]) {
 
 const CONTACT_PORT = 8788;
 const TO = process.env.CONTACT_TO_EMAIL || "info@hoiwajapan.com";
-const FROM = process.env.CONTACT_FROM_EMAIL || `Hoiwa Website <${TO}>`;
+const FROM = process.env.CONTACT_FROM_EMAIL || `HOIWA Website <${TO}>`;
 
 createServer(async (req, res) => {
   res.setHeader("Access-Control-Allow-Origin", "*");

@@ -1,6 +1,6 @@
-# 株式会社帆岩 Corporate Website
+# 帆岩（HOIWA） Corporate Website
 
-肥料原料と機械設備を中核に、アジア・アフリカ市場を結ぶ貿易会社の企業サイトです。Next.js 15 / TypeScript / SCSS で構築しています。
+京古斎合同会社が屋号「帆岩」で運営する企業サイトです。Next.js 15 / TypeScript / SCSS で構築しています。
 
 ## Local development
 

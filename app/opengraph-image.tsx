@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const dynamic = "force-static";
-export const alt = "帆岩（ほいわ）｜規格と納期を明確にして、肥料原料を供給する。";
+export const alt = "帆岩（HOIWA）｜規格と納期を明確にして、肥料原料を供給する。";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 

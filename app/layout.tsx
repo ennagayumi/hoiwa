@@ -4,18 +4,18 @@ import Footer from "@/components/Footer";
 import JsonLd from "@/components/JsonLd";
 import { LanguageProvider } from "@/context/LanguageContext";
 import { contactEmail, officeBuilding, officeLocality, officePostalCode, officeRegion, officeStreet } from "@/data/site";
-import { absoluteUrl, brandWithKana, createPageMetadata, operatorName, organizationId, siteAlternateNames, siteDescription, siteName, siteUrl, websiteId } from "@/lib/seo";
+import { absoluteUrl, brandTitle, createPageMetadata, operatorName, organizationId, siteAlternateNames, siteDescription, siteUrl, websiteId } from "@/lib/seo";
 import "./globals.scss";
 
-const homeTitle = `${brandWithKana}｜肥料・肥料原料の輸出入・国際貿易`;
+const homeTitle = `${brandTitle}｜肥料・肥料原料の輸入販売｜${operatorName}`;
 const googleSiteVerification = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION?.trim();
 
 export const metadata: Metadata = {
   ...createPageMetadata(homeTitle, siteDescription, "/"),
   metadataBase: new URL(siteUrl),
-  title: { default: homeTitle, template: `%s｜${brandWithKana}` },
-  applicationName: brandWithKana,
-  keywords: ["帆岩", "ほいわ", "京古斎合同会社", "Hoiwa", "肥料 輸入", "肥料原料", "硫酸マグネシウム", "硫酸アンモニウム", "硫安", "肥料 輸出", "貿易会社", "輸出入", "化学品貿易", "Japan fertilizer trading company", "Magnesium Sulfate", "Ammonium Sulfate Japan"],
+  title: { default: homeTitle, template: `%s｜${brandTitle}` },
+  applicationName: brandTitle,
+  keywords: ["帆岩", "帆岩（HOIWA）", "ほいわ", "京古斎合同会社", "HOIWA", "Hoiwa", "肥料 輸入", "肥料原料", "硫酸マグネシウム", "硫酸アンモニウム", "硫安", "肥料 輸出", "貿易会社", "輸出入", "化学品貿易", "Japan fertilizer trading company", "Magnesium Sulfate", "Ammonium Sulfate Japan"],
   category: "肥料・農業資材・国際貿易",
   formatDetection: { telephone: false, email: false, address: false },
   ...(googleSiteVerification ? { verification: { google: googleSiteVerification } } : {}),
@@ -27,13 +27,13 @@ const structuredData = {
     {
       "@type": "Organization",
       "@id": organizationId,
-      name: siteName,
+      name: brandTitle,
       alternateName: siteAlternateNames,
       legalName: operatorName,
       url: absoluteUrl("/"),
-      logo: { "@type": "ImageObject", "@id": `${siteUrl}/#logo`, url: `${siteUrl}/icon.svg`, contentUrl: `${siteUrl}/icon.svg`, caption: brandWithKana },
+      logo: { "@type": "ImageObject", "@id": `${siteUrl}/#logo`, url: `${siteUrl}/icon.svg`, contentUrl: `${siteUrl}/icon.svg`, caption: brandTitle },
       image: { "@id": `${siteUrl}/#logo` },
-      description: `${brandWithKana}は、${operatorName}の屋号です。`,
+      description: `${brandTitle}は、${operatorName}が運営する屋号です。`,
       address: {
         "@type": "PostalAddress",
         postalCode: officePostalCode,
@@ -60,7 +60,7 @@ const structuredData = {
       "@type": "WebSite",
       "@id": websiteId,
       url: absoluteUrl("/"),
-      name: siteName,
+      name: brandTitle,
       alternateName: siteAlternateNames,
       description: siteDescription,
       publisher: { "@id": organizationId },

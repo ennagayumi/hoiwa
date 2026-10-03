@@ -101,7 +101,7 @@ export async function sendContactMail(data: ContactPayload, env: ContactEnv): Pr
   if (!apiKey) return { ok: false, error: "not_configured" };
 
   const to = env.CONTACT_TO_EMAIL?.trim() || contactEmail;
-  const from = env.CONTACT_FROM_EMAIL?.trim() || `Hoiwa Website <${contactEmail}>`;
+  const from = env.CONTACT_FROM_EMAIL?.trim() || `HOIWA Website <${contactEmail}>`;
   const message = buildMessage(data);
 
   const response = await fetch("https://api.resend.com/emails", {
