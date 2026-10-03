@@ -1,12 +1,12 @@
 import JsonLd from "@/components/JsonLd";
-import { createPageJsonLd, createPageMetadata } from "@/lib/seo";
+import { brandWithKana, createPageJsonLd, createPageMetadata } from "@/lib/seo";
 
 const title = "プライバシーポリシー";
-const description = "株式会社帆岩の個人情報保護方針をご案内します。";
+const description = "京古斎合同会社（帆岩）の個人情報保護方針をご案内します。";
 
 export const metadata = createPageMetadata(title, description, "/privacy");
 
-const jsonLd = createPageJsonLd("/privacy", `${title}｜株式会社帆岩`, description);
+const jsonLd = createPageJsonLd("/privacy", `${title}｜${brandWithKana}`, description);
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (

@@ -1,4 +1,18 @@
-export const contactEmail = "takeda@hoiwajapan.com";
+export const contactEmail = "info@hoiwajapan.com";
+export const representativeName = "居亦露";
+export const establishedOn = "2026年9月30日";
+export const capital = "600万円";
+
+export const operatorName = "京古斎合同会社";
+export const officePostalCode = "273-0035";
+export const officeRegion = "千葉県";
+export const officeLocality = "船橋市";
+export const officeStreet = "本中山3丁目25番2号";
+export const officeBuilding = "中山第二マンション208号室";
+export const officeAddressLine = `〒${officePostalCode} ${officeRegion}${officeLocality}${officeStreet} ${officeBuilding}`;
+const officeMapQuery = `${officeRegion}${officeLocality}${officeStreet} ${officeBuilding}`;
+export const officeMapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(officeMapQuery)}`;
+export const officeMapEmbedUrl = `https://maps.google.com/maps?q=${encodeURIComponent(officeMapQuery)}&ll=35.7128493,139.9414012&z=16&hl=ja&output=embed`;
 
 export const navItems = [
   { label: "事業案内", en: "Business", href: "/business" },

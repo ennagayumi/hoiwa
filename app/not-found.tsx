@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   // be indexed and must not declare the home page as its canonical URL.
   robots: { index: false, follow: true },
   alternates: {},
-  openGraph: { type: "website", locale: "ja_JP", siteName: "株式会社帆岩", title: "ページが見つかりません" },
+  openGraph: { type: "website", locale: "ja_JP", siteName: "帆岩（ほいわ）", title: "ページが見つかりません" },
 };
 
 export default function NotFound() {

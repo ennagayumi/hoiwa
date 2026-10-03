@@ -1,18 +1,24 @@
 import type { Metadata } from "next";
+import { operatorName } from "@/data/site";
+
+export { operatorName };
 
 // Canonical origin. Override per environment via NEXT_PUBLIC_SITE_URL
 // (e.g. a Cloudflare Pages preview URL) without touching source.
 const rawSiteUrl = process.env.NEXT_PUBLIC_SITE_URL?.trim() || "https://hoiwajapan.com";
 export const siteUrl = rawSiteUrl.replace(/\/+$/, "");
 
-export const siteName = "株式会社帆岩";
-export const siteNameEn = "Hoiwa Co., Ltd.";
+export const siteName = "帆岩";
+export const siteNameEn = "Hoiwa";
+export const siteNameKana = "ほいわ";
+export const brandWithKana = `${siteName}（${siteNameKana}）`;
+export const siteAlternateNames = [siteNameKana, siteNameEn, operatorName];
 export const siteDescription =
-  "株式会社帆岩は、硫酸マグネシウムと硫酸アンモニウムを中心に、肥料原料の規格・COA・納期を日本語で確認して供給する商社です。硫酸マグネシウムは天津の提携メーカーが製造し、帆岩が日本側の窓口です。";
+  "帆岩（ほいわ）は、京古斎合同会社の屋号です。硫酸マグネシウムと硫酸アンモニウムを中心に、規格・COA・納期を日本語で確認して供給します。硫酸マグネシウムは天津の提携メーカーが製造し、帆岩が日本側の窓口です。";
 
 // Bump when page content changes so <lastmod> stays truthful.
 // Google ignores <lastmod> entirely if it is obviously auto-generated.
-export const siteLastModified = "2026-09-23";
+export const siteLastModified = "2026-10-03";
 
 export const organizationId = `${siteUrl}/#organization`;
 export const websiteId = `${siteUrl}/#website`;
@@ -81,7 +87,7 @@ export function createPageMetadata(
       type: "website",
       locale: "ja_JP",
       alternateLocale: ["en_US", "zh_CN"],
-      siteName,
+      siteName: brandWithKana,
       title,
       description,
       url: canonical,

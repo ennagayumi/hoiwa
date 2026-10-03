@@ -22,9 +22,9 @@ button { color: inherit; }
 .logo { display: inline-flex; align-items: center; gap: 13px; color: $navy; line-height: 1; flex: none;
   svg { width: 36px; height: 36px; fill: currentColor; }
   .logo__accent { fill: $bronze; }
-  span { display: grid; gap: 7px; }
-  strong { font-size: 21px; letter-spacing: .18em; font-weight: 650; }
-  small { font: 10px/1 Georgia, serif; letter-spacing: .13em; }
+  .logo__name { display: inline-grid; gap: 7px; justify-items: stretch; }
+  strong { display: flex; justify-content: space-between; gap: .18em; font-size: 21px; letter-spacing: 0; font-weight: 650; }
+  small { display: flex; justify-content: space-between; width: 100%; font: 10px/1 Georgia, serif; letter-spacing: 0; }
   &--light { color: $white; }
 }
 .header { position: fixed; z-index: 50; inset: 0 0 auto; height: 88px; display: flex; align-items: center; padding-inline: 48px; transition: background .35s, height .35s, box-shadow .35s; color: $white;
@@ -320,7 +320,7 @@ button { color: inherit; }
 .trade-flow li:not(:last-child)::after { content: ""; position: absolute; left: 32px; bottom: -7px; width: 12px; height: 12px; background: $white; border-right: 1px solid $bronze; border-bottom: 1px solid $bronze; transform: rotate(45deg); }
 .trade-flow b { color: $bronze; font: 19px/1 Georgia,serif; }.trade-flow h2 { margin: 0 0 8px; color: $navy; font-size: 22px; font-weight: 520; }.trade-flow p { margin: 0; color: $muted; }
 .message { display: grid; grid-template-columns: .8fr 1.2fr; gap: 12%; }.message > div { padding-top: 50px; }.message > div p { margin: 0 0 20px; }.signature { text-align: right; margin-top: 45px !important; }.signature strong { font-weight: 520; }
-.philosophy-detail { background: $navy; color: $white; }.philosophy-detail .section-heading h2 { color: $white; }.philosophy-detail blockquote { font-size: clamp(28px, 3.6vw, 48px); margin: 55px 0 70px; line-height: 1.65; }.values { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid rgba(255,255,255,.25); }.values article { padding: 30px 8% 0 0; }.values article:not(:last-child) { border-right: 1px solid rgba(255,255,255,.25); margin-right: 8%; }.values h3 { color: #c9ae7a; font-size: 18px; }.values p { font-size: 13px; color: rgba(255,255,255,.65); }
+.philosophy-detail { background: $navy; color: $white; }.philosophy-detail .section-heading h2 { color: $white; }.philosophy-detail blockquote { font-size: clamp(28px, 3.6vw, 48px); margin: 55px 0 22px; line-height: 1.65; }.philosophy-detail .shell > p { max-width: 640px; margin: 0 0 70px; color: rgba(255,255,255,.72); }.values { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid rgba(255,255,255,.25); }.values article { padding: 30px 8% 0 0; }.values article:not(:last-child) { border-right: 1px solid rgba(255,255,255,.25); margin-right: 8%; }.values h3 { color: #c9ae7a; font-size: 18px; }.values p { font-size: 13px; color: rgba(255,255,255,.65); }
 .history { scroll-margin-top: 100px; }
 .history .section-heading { margin-bottom: 60px; }
 .history__list { list-style: none; margin: 0; padding: 0; max-width: 960px; border-top: 1px solid $line; }
@@ -329,7 +329,14 @@ button { color: inherit; }
 .history__list p { margin: 4px 0 0; color: $ink; line-height: 2; }
 .company-outline { padding-top: 0; }
 .company-outline .section-heading { margin-bottom: 65px; }.company-outline dl { margin: 0; border-top: 1px solid $line; max-width: 960px; }.company-outline dl div { display: grid; grid-template-columns: 220px 1fr; padding: 22px 0; border-bottom: 1px solid $line; }.company-outline dt { color: $navy; font-weight: 600; }.company-outline dd { margin: 0; line-height: 2; }
-.access { background: $paper; }.access .section-heading { margin-bottom: 45px; }.access__placeholder { min-height: 260px; background: #e3e6e3; display: grid; place-items: center; align-content: center; color: $muted; text-align: center; }.access__placeholder span { font: 14px/1 Georgia,serif; }.access__placeholder strong { color: $navy; margin-top: 15px; }.access__placeholder p { font-size: 13px; }
+.access { background: $paper; }.access .section-heading { margin-bottom: 45px; }
+.access__body { display: grid; grid-template-columns: minmax(240px, 340px) 1fr; gap: 48px; align-items: stretch; }
+.access__map { width: 100%; height: 100%; min-height: 320px; border: 1px solid $line; background: #eef1ef; }
+.access__card { display: grid; justify-items: start; align-content: start; gap: 2px; margin: 0; padding: 0; background: transparent; border: 0; text-align: left; font-style: normal; color: $ink;
+  strong { margin-bottom: 10px; color: $navy; font-size: 16px; font-weight: 600; letter-spacing: .08em; }
+  span { font-size: 15px; letter-spacing: .04em; line-height: 1.9; }
+  a { margin-top: 14px; color: $bronze; font-size: 13px; letter-spacing: .08em; }
+}
 .news-list { max-width: 1000px; }.news-filter { display: flex; gap: 0; margin-bottom: 55px; }.news-filter button { background: transparent; border: 1px solid $line; min-width: 130px; padding: 10px 18px; font-size: 13px; }.news-filter .active { background: $navy; color: $white; border-color: $navy; }.news-list > div:nth-child(2) { border-top: 1px solid $line; }.news-list article { display: grid; grid-template-columns: 140px 110px 1fr; align-items: center; padding: 30px 0; border-bottom: 1px solid $line; }.news-list time { color: $muted; }.news-list em { font-size: 11px; border: 1px solid $line; text-align: center; font-style: normal; }.news-list h2 { margin: 0; font-size: 16px; font-weight: 500; }.news-note { color: #9b5d38; font-size: 12px; margin-top: 25px; }
 .contact-page > .section-heading { max-width: 640px; margin: 0 auto 60px; }
 .contact-form { max-width: 640px; margin-inline: auto; }
@@ -420,8 +427,9 @@ button { color: inherit; }
 .footer { background: $navy-deep; color: $white; padding-top: 85px;
   &__main { display: grid; grid-template-columns: 1fr 1fr; padding-bottom: 80px; }
   &__main > div > p { margin: 30px 0 0; color: rgba(255,255,255,.5); font-size: 12px; }
-  &__email { display: inline-flex; flex-direction: column; gap: 6px; margin-top: 22px; color: $white; font-size: 14px; letter-spacing: .04em; }
-  &__email small { color: rgba(255,255,255,.45); font-size: 10px; letter-spacing: .12em; }
+  &__address { display: grid; gap: 2px; margin: 28px 0 0; font-style: normal; color: rgba(255,255,255,.72); font-size: 12px; letter-spacing: .06em; line-height: 1.8; }
+  &__address strong { color: $white; font-weight: 500; letter-spacing: .12em; }
+  &__address a { margin-top: 8px; color: $white; }
   nav { display: grid; grid-template-columns: repeat(3, 1fr); gap: 35px; }
   nav div { display: flex; flex-direction: column; gap: 13px; }
   nav a { color: rgba(255,255,255,.72); font-size: 12px; }
@@ -442,7 +450,8 @@ button { color: inherit; }
   .home-hero__functions { flex-direction: column; gap: 14px; max-width: 420px; }
   .home-hero__functions > div { flex: none; width: 100%; }
   .home-hero__shade { background: linear-gradient(90deg, rgba(4,19,31,.98) 0%, rgba(4,19,31,.83) 55%, rgba(4,19,31,.58) 100%), linear-gradient(0deg, rgba(4,19,31,.88), transparent 48%); }
-  .intro, .page-intro, .network-home, .message, .network-note .shell { grid-template-columns: 1fr; gap: 25px; }
+  .intro, .page-intro, .network-home, .message, .network-note .shell, .access__body { grid-template-columns: 1fr; gap: 25px; }
+  .access__map { height: 280px; }
   .intro__body, .page-intro > div, .message > div, .network-note .shell > p { padding-top: 0; }
   .business-feature .section-heading { grid-template-columns: 1fr; }.business-feature .section-heading > div { margin-top: 25px; }
   .featured-home__grid { grid-template-columns: 1fr; }

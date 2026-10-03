@@ -11,8 +11,8 @@ const agricultureHero = "https://images.unsplash.com/photo-1721454623235-d715773
 
 export default function Home() {
   const { t } = useLanguage();
-  const strengths = t.strengths.items.filter((item) => !/源流|Origins|渊源/.test(item.title));
-  const newsItems = t.news.items.filter((item) => item.date !== "1991");
+  const strengths = t.strengths.items;
+  const newsItems = t.news.items;
 
   return (
     <>

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Logo from "./Logo";
-import { contactEmail } from "@/data/site";
+import { contactEmail, officeBuilding, officeLocality, officePostalCode, officeRegion, officeStreet, operatorName } from "@/data/site";
 import { useLanguage } from "@/context/LanguageContext";
 
 export default function Footer() {
@@ -14,10 +14,13 @@ export default function Footer() {
         <div>
           <Logo light />
           <p style={{ whiteSpace: "pre-line" }}>{t.footer.slogan}</p>
-          <a className="footer__email" href={`mailto:${contactEmail}`}>
-            <small>{t.footer.emailLabel}</small>
-            {contactEmail}
-          </a>
+          <address className="footer__address">
+            <strong>{operatorName}</strong>
+            <span>〒{officePostalCode}</span>
+            <span>{officeRegion}{officeLocality}{officeStreet}</span>
+            <span>{officeBuilding}</span>
+            <a href={`mailto:${contactEmail}`}>E-mail: {contactEmail}</a>
+          </address>
         </div>
         <nav aria-label={t.footer.navAria}>
           <div>

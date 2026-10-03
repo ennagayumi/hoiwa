@@ -45,7 +45,7 @@ export default function NewsPage() {
             </article>
           ))}
         </div>
-        <p className="news-note">{t.news.newsNote}</p>
+        {t.news.newsNote ? <p className="news-note">{t.news.newsNote}</p> : null}
       </section>
     </>
   );
