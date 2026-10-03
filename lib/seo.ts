@@ -13,9 +13,9 @@ export const siteNameEn = "HOIWA";
 export const siteNameKana = "ほいわ";
 export const brandTitle = `${siteName}（${siteNameEn}）`;
 export const brandWithKana = `${siteName}（${siteNameKana}）`;
-export const siteAlternateNames = [siteNameKana, siteNameEn, "Hoiwa", operatorName];
+export const siteAlternateNames = [siteNameKana, siteNameEn, "Hoiwa"];
 export const siteDescription =
-  "帆岩は京古斎合同会社が運営する屋号です。中国の提携メーカーと連携し、規格・COA・納期を明確にして肥料原料を日本市場へ供給します。千葉県船橋市。";
+  "帆岩（HOIWA）は、中国の提携メーカーと連携し、規格・COA・納期を明確にして肥料原料を日本市場へ供給します。千葉県船橋市。";
 
 // Bump when page content changes so <lastmod> stays truthful.
 // Google ignores <lastmod> entirely if it is obviously auto-generated.

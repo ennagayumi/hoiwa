@@ -2,7 +2,7 @@ import JsonLd from "@/components/JsonLd";
 import { brandTitle, createPageJsonLd, createPageMetadata } from "@/lib/seo";
 
 const title = "企業情報";
-const description = "帆岩（ほいわ）は、京古斎合同会社の屋号です。千葉県船橋市を拠点に、肥料原料の条件を確認して供給します。";
+const description = "帆岩（ほいわ）は、千葉県船橋市を拠点に、肥料原料の条件を確認して供給します。";
 
 export const metadata = createPageMetadata(title, description, "/company");
 
