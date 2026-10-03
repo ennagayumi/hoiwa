@@ -52,7 +52,7 @@ export const siteRoutes = [
   { path: "/products", label: "肥料・肥料原料", priority: 0.9, schemaType: "CollectionPage" },
   { path: "/strengths", label: "当社の強み", priority: 0.7, schemaType: "WebPage" },
   { path: "/trade-flow", label: "お取引の流れ", priority: 0.7, schemaType: "WebPage" },
-  { path: "/network", label: "国際貿易ネットワーク", priority: 0.7, schemaType: "WebPage" },
+  { path: "/network", label: "調達と供給のネットワーク", priority: 0.7, schemaType: "WebPage" },
   { path: "/company", label: "企業情報", priority: 0.8, schemaType: "AboutPage" },
   { path: "/news", label: "ニュース", priority: 0.6, schemaType: "CollectionPage" },
   { path: "/contact", label: "お問い合わせ", priority: 0.8, schemaType: "ContactPage" },

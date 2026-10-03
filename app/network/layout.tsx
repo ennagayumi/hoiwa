@@ -1,8 +1,8 @@
 import JsonLd from "@/components/JsonLd";
 import { createPageJsonLd, createPageMetadata } from "@/lib/seo";
 
-const title = "確認できる相手がいる地域｜中国・日本";
-const description = "工場への確認は中国の提携会社、日本の需要家への条件提示は帆岩が行います。東南アジアとアフリカは、取引先が決まった案件から対応します。";
+const title = "調達と供給のネットワーク";
+const description = "中国で製造し、日本へ供給します。確認できる相手と、確認できる条件で、肥料原料をお届けします。";
 
 export const metadata = createPageMetadata(title, description, "/network");
 

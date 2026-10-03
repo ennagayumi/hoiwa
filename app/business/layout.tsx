@@ -15,7 +15,7 @@ const jsonLd = createPageJsonLd("/business", title, description, [
     itemListElement: services.map((name, i) => ({
       "@type": "ListItem",
       position: i + 1,
-      item: { "@type": "Service", name, provider: { "@id": organizationId }, areaServed: ["JP", "Asia", "Africa"] },
+      item: { "@type": "Service", name, provider: { "@id": organizationId }, areaServed: ["JP"] },
     })),
   },
 ]);

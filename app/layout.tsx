@@ -43,7 +43,7 @@ const structuredData = {
         addressCountry: "JP",
       },
       slogan: "規格と納期を明確にして、肥料原料を供給する。",
-      areaServed: ["JP", "VN", "Asia", "Africa"],
+      areaServed: ["JP"],
       knowsAbout: ["肥料", "肥料原料", "硫酸アンモニウム", "尿素", "カリ肥料", "国際貿易", "輸出入", "Ammonium Sulfate", "Urea", "Potash"],
       knowsLanguage: ["ja", "en", "zh"],
       contactPoint: {
@@ -52,7 +52,7 @@ const structuredData = {
         email: contactEmail,
         url: `${siteUrl}/contact`,
         availableLanguage: ["Japanese", "English", "Chinese"],
-        areaServed: ["JP", "Asia", "Africa"],
+        areaServed: ["JP"],
       },
       email: contactEmail,
     },
