@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import SectionHeading from "@/components/SectionHeading";
 import ContactBand from "@/components/ContactBand";
@@ -83,6 +84,17 @@ export default function CompanyPage() {
             />
           </div>
         </div>
+      </section>
+      <section className="related-business shell">
+        <div>
+          <small>{t.company.recruitTag}</small>
+          <h2>{t.company.recruitTitle}</h2>
+          <p>{t.company.recruitBody}</p>
+        </div>
+        <Link href="/recruit">
+          <span>{t.company.recruitLink}</span>
+          <i aria-hidden="true">›</i>
+        </Link>
       </section>
       <ContactBand />
     </>

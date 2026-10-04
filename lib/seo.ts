@@ -55,6 +55,7 @@ export const siteRoutes = [
   { path: "/network", label: "調達と供給のネットワーク", priority: 0.7, schemaType: "WebPage" },
   { path: "/company", label: "企業情報", priority: 0.8, schemaType: "AboutPage" },
   { path: "/news", label: "ニュース", priority: 0.6, schemaType: "CollectionPage" },
+  { path: "/recruit", label: "採用情報", priority: 0.6, schemaType: "CollectionPage" },
   { path: "/contact", label: "お問い合わせ", priority: 0.8, schemaType: "ContactPage" },
   { path: "/privacy", label: "プライバシーポリシー", priority: 0.3, schemaType: "WebPage" },
   { path: "/credits", label: "素材クレジット", priority: 0.1, schemaType: "WebPage", noIndex: true },

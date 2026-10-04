@@ -35,6 +35,7 @@ export default function Footer() {
           </div>
           <div>
             <Link href="/trade-flow">{t.footer.tradeFlow}</Link>
+            <Link href="/recruit">{t.footer.recruit}</Link>
             <Link href="/contact">{t.footer.contact}</Link>
             <Link href="/privacy">{t.footer.privacy}</Link>
             <Link href="/credits">{t.footer.credits}</Link>

@@ -17,7 +17,6 @@ export const officeMapEmbedUrl = `https://maps.google.com/maps?q=${encodeURIComp
 export const navItems = [
   { label: "事業案内", en: "Business", href: "/business" },
   { label: "肥料原料", en: "Fertilizer", href: "/products" },
-  { label: "機械・設備", en: "Machinery", href: "/machinery" },
   { label: "当社の強み", en: "Strengths", href: "/strengths" },
   { label: "企業情報", en: "Company", href: "/company" },
   { label: "ニュース", en: "News", href: "/news" },
@@ -95,8 +94,28 @@ export const flow = [
   ["継続フォロー", "納品後の確認を行い、次回調達や継続取引につなげます。"],
 ] as const;
 
-export const newsItems = [
-  { date: "2026.XX.XX", category: "お知らせ", title: "コーポレートサイトを公開しました。" },
-  { date: "2026.XX.XX", category: "事業情報", title: "肥料原料の輸出入事業を開始しました。" },
-  { date: "2026.XX.XX", category: "事業情報", title: "機械・設備の国際調達事業を開始しました。" },
-] as const;
+// 採用情報。jobOpenings が空のあいだ、/recruit は「現在、募集は行っておりません」
+// と表示し、JobPosting の構造化データも出力しない。実際に募集を始めるときに
+// ここへ 1 件追加すれば、ページ表示と構造化データの両方が有効になる。
+//
+// 追加するときの注意:
+//  - 募集要項は職業安定法第5条の3が明示を求める事項（業務内容、契約期間、
+//    就業場所、就業時間、賃金、加入保険）を必ず埋めること。表示用の文章は
+//    data/translations.ts の recruit.jobs 側に、同じ件数ぶん用意する。
+//  - validThrough を過ぎた求人を JobPosting として出し続けると Google の
+//    手動対策の対象になるため、募集終了時はこの配列から削除する。
+export type JobOpening = {
+  title: string;
+  en: string;
+  /** schema.org employmentType: FULL_TIME / PART_TIME / CONTRACTOR など。 */
+  employmentType: string;
+  openings: number;
+  description: string;
+  /** 月額。賃金を公開しない場合は両方 undefined にすると baseSalary を省く。 */
+  salaryMin?: number;
+  salaryMax?: number;
+  postedOn: string;
+  validThrough: string;
+};
+
+export const jobOpenings: readonly JobOpening[] = [];

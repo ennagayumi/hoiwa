@@ -25,6 +25,7 @@ export default function Header() {
     { href: "/strengths", key: "strengths" as const },
     { href: "/company", key: "company" as const },
     { href: "/news", key: "news" as const },
+    { href: "/recruit", key: "recruit" as const },
   ];
 
   return (

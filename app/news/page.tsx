@@ -41,7 +41,11 @@ export default function NewsPage() {
             <article key={item.title}>
               <time dateTime={toDateTime(item.date)}>{item.date}</time>
               <em>{item.category}</em>
-              <h2>{item.title}</h2>
+              <h2>
+                {item.title}
+                {/* e.g. 「募集終了」 on a posting that has closed: set `status` on the item. */}
+                {item.status && <small className="news-status">{item.status}</small>}
+              </h2>
             </article>
           ))}
         </div>
