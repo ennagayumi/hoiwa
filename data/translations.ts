@@ -116,7 +116,7 @@ const coreTranslations = {
     },
     products: {
       heroTitle: "肥料原料",
-      heroImageAlt: "農地に肥料を散布する様子。硫酸アンモニウム、尿素、カリ肥料の利用イメージ",
+      heroImageAlt: "市場に並ぶねぎとにんじん。肥料原料が支える農産物のイメージ",
       heroLead: "主力は硫酸マグネシウムと硫酸アンモニウムです。硫酸マグネシウムは天津の提携メーカーが製造し、帆岩が日本側の窓口です。規格、粒度、包装は、サンプルとロットのCOAで確認してから契約します。",
       introTag: "Core Business",
       introTitle: "配合・BB向けの原料を、\n確認してから契約する。",
@@ -742,7 +742,7 @@ const coreTranslations = {
     },
     products: {
       heroTitle: "Fertilizer Materials",
-      heroImageAlt: "Fertilizer being applied to farmland, illustrating the use of ammonium sulfate, urea, and potash",
+      heroImageAlt: "Leeks and carrots at a market stall, representing produce supported by fertilizer materials",
       heroLead: "Core products are magnesium sulfate and ammonium sulfate. Magnesium sulfate is made by a partner producer in Tianjin; HOIWA is the Japan window. Spec, particle size, and packaging are contracted only after the sample and the lot COA are checked.",
       introTag: "Core Business",
       introTitle: "Contract on checked specs —\nfor blenders and BB plants.",
@@ -1364,7 +1364,7 @@ const coreTranslations = {
     },
     products: {
       heroTitle: "化肥与原料",
-      heroImageAlt: "农田施肥场景，展现硫酸铵、尿素与钾肥的应用",
+      heroImageAlt: "市集摊位上的韭葱与胡萝卜，体现肥料原料支撑的农产品",
       heroLead: "主力是硫酸镁与硫酸铵。硫酸镁由天津的合作厂家生产，帆岩是日本窗口。规格、粒度和包装，在确认样品与该批次COA后再签约。",
       introTag: "Core Business",
       introTitle: "从产地工厂，到客户仓库。",
