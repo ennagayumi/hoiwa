@@ -1,4 +1,10 @@
 export const contactEmail = "info@hoiwajapan.com";
+// ページ最上部と右側の追従バーに出す営業窓口。専用アドレスを用意したらここだけ差し替える。
+export const salesEmail = contactEmail;
+// 右側の追従バーで LINE ボタンを押したときに出す友だち追加用 QR コード。
+// LINE アプリの「友だち追加 → QRコード → マイQRコード」で保存した画像を
+// public/images/contact/line-qr.png に置き、パスをそちらへ差し替える。
+export const lineQrImage = "/images/contact/line-qr-placeholder.svg";
 export const representativeName = "居亦露";
 export const establishedOn = "2026年9月30日";
 export const capital = "600万円";

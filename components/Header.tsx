@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import Logo from "./Logo";
 import { useLanguage } from "@/context/LanguageContext";
 import { Locale } from "@/data/translations";
+import { salesEmail } from "@/data/site";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -29,37 +30,49 @@ export default function Header() {
   ];
 
   return (
-    <header className={`header${scrolled ? " header--scrolled" : ""}${open ? " header--open" : ""}`}>
-      <Logo light={!scrolled && !open} />
-      <button className="menu-button" onClick={() => setOpen(!open)} aria-expanded={open} aria-controls="global-nav">
-        <span /><span /><span /><b>{t.header.menu}</b>
-      </button>
-      <nav id="global-nav" aria-label={t.header.navAria}>
-        {navList.map(({ href, key }) => {
-          const item = t.nav[key];
-          return (
-            <Link key={href} href={href} onClick={() => setOpen(false)}>
-              <span>{item.en}</span>
-              {item.en !== item.label && <small>{item.label}</small>}
-            </Link>
-          );
-        })}
-        <Link className="header__contact" href="/contact" onClick={() => setOpen(false)}>
-          {t.nav.contact}
-        </Link>
-        <div className="lang-switcher" aria-label="Language Selector">
-          {(["ja", "en"] as Locale[]).map((lang) => (
-            <button
-              key={lang}
-              type="button"
-              className={locale === lang ? "active" : ""}
-              onClick={() => setLocale(lang)}
-            >
-              {lang === "ja" ? "日本語" : "EN"}
-            </button>
-          ))}
-        </div>
-      </nav>
-    </header>
+    <>
+      <div className={`topbar${scrolled || open ? " topbar--hidden" : ""}`}>
+        <p className="topbar__inner">
+          <span className="topbar__note">{t.header.salesNote}</span>
+          <a href={`mailto:${salesEmail}`}>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18v14H3z" fill="none" stroke="currentColor" strokeWidth="1.6" /><path d="m3.5 6 8.5 7 8.5-7" fill="none" stroke="currentColor" strokeWidth="1.6" /></svg>
+            <b>{t.header.salesLabel}</b>
+            <span>{salesEmail}</span>
+          </a>
+        </p>
+      </div>
+      <header className={`header${scrolled ? " header--scrolled" : ""}${open ? " header--open" : ""}`}>
+        <Logo light={!scrolled && !open} />
+        <button className="menu-button" onClick={() => setOpen(!open)} aria-expanded={open} aria-controls="global-nav">
+          <span /><span /><span /><b>{t.header.menu}</b>
+        </button>
+        <nav id="global-nav" aria-label={t.header.navAria}>
+          {navList.map(({ href, key }) => {
+            const item = t.nav[key];
+            return (
+              <Link key={href} href={href} onClick={() => setOpen(false)}>
+                <span>{item.en}</span>
+                {item.en !== item.label && <small>{item.label}</small>}
+              </Link>
+            );
+          })}
+          <Link className="header__contact" href="/contact" onClick={() => setOpen(false)}>
+            {t.nav.contact}
+          </Link>
+          <div className="lang-switcher" aria-label="Language Selector">
+            {(["ja", "en"] as Locale[]).map((lang) => (
+              <button
+                key={lang}
+                type="button"
+                className={locale === lang ? "active" : ""}
+                onClick={() => setLocale(lang)}
+              >
+                {lang === "ja" ? "日本語" : "EN"}
+              </button>
+            ))}
+          </div>
+        </nav>
+      </header>
+    </>
   );
 }

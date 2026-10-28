@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import FloatingContact from "@/components/FloatingContact";
 import JsonLd from "@/components/JsonLd";
 import { LanguageProvider } from "@/context/LanguageContext";
 import { contactEmail, officeBuilding, officeLocality, officePostalCode, officeRegion, officeStreet } from "@/data/site";
@@ -78,6 +79,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           <Header />
           <main>{children}</main>
           <Footer />
+          <FloatingContact />
         </LanguageProvider>
       </body>
     </html>
