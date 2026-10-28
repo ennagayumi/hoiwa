@@ -172,8 +172,34 @@ button { color: inherit; }
   &__pillars li { position: relative; padding-left: 20px; color: rgba(255,255,255,.82); font-size: 13px; line-height: 1.7; }
   &__pillars li::before { content: ""; position: absolute; left: 0; top: .62em; width: 8px; height: 8px; border: 1px solid #c9ae7a; transform: rotate(45deg); }
 }
-.application-home { background: $paper;
+.shipments-home { background: $paper;
+  &__list { list-style: none; margin: 56px 0 0; padding: 0; border-top: 1px solid $line; }
+  &__list li { display: grid; grid-template-columns: 96px minmax(200px, 300px) 1fr; gap: 32px; padding: 28px 0; border-bottom: 1px solid $line; }
+  &__list time { color: $bronze; font: 14px/1.6 Georgia, serif; letter-spacing: .06em; }
+  &__head b { display: block; color: $navy; font: 34px/1 Georgia, serif; letter-spacing: .01em; }
+  &__head strong { display: block; margin-top: 10px; color: $ink; font-size: 14px; font-weight: 600; line-height: 1.6; }
+  dl { margin: 0; display: grid; gap: 10px; }
+  dl div { display: grid; grid-template-columns: 120px 1fr; gap: 18px; }
+  dt { color: $navy; font-size: 12px; font-weight: 600; letter-spacing: .06em; line-height: 1.8; }
+  dd { margin: 0; color: $muted; font-size: 13px; line-height: 1.8; }
+  &__source { margin: 22px 0 0; color: $muted; font-size: 12px; }
+}
+.crop-grid { margin-top: 28px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.recruit-primer {
+  &__subhead { margin: 56px 0 0; padding-left: 14px; border-left: 3px solid $bronze; color: $navy; font-size: 18px; font-weight: 600; letter-spacing: .04em; }
+  &__note { margin: 18px 0 0; color: $muted; font-size: 12px; }
   &__grid { margin-top: 56px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+  &__grid article { padding: 28px 28px 30px; background: $white; border: 1px solid $line; }
+  &__grid h3 { margin: 0 0 16px; color: $navy; font-size: 17px; font-weight: 600; letter-spacing: .04em; }
+  &__grid ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+  &__grid li { position: relative; padding-left: 16px; color: $ink; font-size: 13px; line-height: 1.85; }
+  &__grid li::before { content: ""; position: absolute; left: 0; top: .78em; width: 6px; height: 6px; background: $bronze; }
+  &__table { width: 100%; margin-top: 24px; border-collapse: collapse; background: $white; border: 1px solid $line; font-size: 13px; }
+  &__table th, &__table td { padding: 12px 20px; border-bottom: 1px solid $line; text-align: left; line-height: 1.7; }
+  &__table thead th { background: $navy; color: $white; font-size: 12px; font-weight: 600; letter-spacing: .08em; }
+  &__table tbody th { width: 34%; color: $navy; font-weight: 600; }
+  &__table td { color: $muted; font-family: Georgia, serif; letter-spacing: .04em; }
+  &__table td b { color: $bronze; font-weight: 700; }
 }
 .crop-card { display: flex; flex-direction: column; background: $white; border: 1px solid $line;
   &__visual { position: relative; aspect-ratio: 3 / 2; overflow: hidden; }
@@ -573,7 +599,9 @@ button { color: inherit; }
   .facts-home__numbers div:nth-child(3) { border-left: 0; }
   .facts-home__numbers div:nth-child(n+3) { border-top: 1px solid rgba(255,255,255,.2); }
   .facts-home__pillars { grid-template-columns: 1fr; }
-  .application-home__grid { grid-template-columns: 1fr 1fr; }
+  .crop-grid, .recruit-primer__grid { grid-template-columns: 1fr 1fr; }
+  .shipments-home__list li { grid-template-columns: 80px 1fr; }
+  .shipments-home__list dl { grid-column: 2; }
   .strengths-home__grid { grid-template-columns: repeat(2,1fr); }.strengths-home article:not(:nth-child(3n)) { border-right: 0; margin-right: 0; }.strengths-home article:nth-child(odd) { border-right: 1px solid rgba(255,255,255,.23); margin-right: 10%; }
   .news-home { grid-template-columns: 1fr; gap: 45px; }.news-home .section-heading { grid-row: auto; }
   .contact-band .shell { gap: 50px; }.contact-band a { width: 330px; flex: none; }
@@ -619,7 +647,15 @@ button { color: inherit; }
   .facts-home__numbers dd { font-size: 30px; }
   .facts-home__numbers dd small { font-size: 12px; margin-left: 4px; }
   .facts-home__pillars article { padding: 26px 22px 28px; }
-  .application-home__grid { grid-template-columns: 1fr; margin-top: 36px; }
+  .crop-grid, .recruit-primer__grid { grid-template-columns: 1fr; }
+  .recruit-primer__grid { margin-top: 36px; }
+  .shipments-home__list { margin-top: 36px; }
+  .shipments-home__list li { grid-template-columns: 1fr; gap: 12px; padding: 24px 0; }
+  .shipments-home__list dl { grid-column: auto; }
+  .shipments-home__list dl div { grid-template-columns: 1fr; gap: 2px; }
+  .shipments-home__head b { font-size: 28px; }
+  .recruit-primer__subhead { margin-top: 44px; font-size: 16px; }
+  .recruit-primer__table th, .recruit-primer__table td { padding: 10px 12px; }
   .floating-contact { top: auto; bottom: 16px; right: 12px; transform: none; }
   .floating-contact__btn { width: 48px; height: 48px; }
   .floating-contact__btn svg { width: 21px; height: 21px; }

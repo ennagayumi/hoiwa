@@ -11,7 +11,7 @@ import { absoluteUrl, createPageJsonLd, createPageMetadata, organizationId } fro
 
 const title = "採用情報";
 const description =
-  "帆岩（ほいわ）の採用情報です。現在の募集状況と、自由応募の受付についてご案内します。";
+  "帆岩（ほいわ）の採用情報です。現在の募集状況と自由応募の受付、入社される方向けの肥料原料の基礎知識をご案内します。";
 
 export const metadata = createPageMetadata(title, description, "/recruit");
 
