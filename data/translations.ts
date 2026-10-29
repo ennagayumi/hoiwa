@@ -1945,7 +1945,7 @@ const coreTranslations = {
         { dt: "合作厂家", dd: "由天津的合作厂家生产。帆岩为日本窗口。" },
         { dt: "主营业务", dd: "化肥及化肥原料进出口与国内销售、化工品进出口。亦承接机械设备国际采购" },
         { dt: "主要经营品种", dd: "硫酸铵、尿素、氯化钾、硫酸钾、磷酸铵、过磷酸钙、NPK复合肥、硫酸镁、氧化镁、氯化镁、微量元素盐（Zn、Fe、Mn）" },
-        { dt: "联系方式", dd: "info@hoiwajapan.com" },
+        { dt: "联系方式", dd: "sales@hoiwajapan.com" },
       ],
       accessTag: "Access",
       accessTitle: "地理位置与交通",
@@ -2064,7 +2064,7 @@ const coreTranslations = {
         },
         {
           title: "8. 联系方式",
-          body: "HOIWA (operated by Kyokosai LLC)\n个人信息相关咨询\ninfo@hoiwajapan.com",
+          body: "HOIWA (operated by Kyokosai LLC)\n个人信息相关咨询\nsales@hoiwajapan.com",
         },
         {
           title: "9. 修订",
