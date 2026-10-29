@@ -13,6 +13,7 @@ type Grade = {
   name: string;
   group?: string;
   groupId?: string;
+  anchor?: string;
   form: string;
   desc: string;
   resultNote?: string;
@@ -72,7 +73,7 @@ function GradeCard({
   const resultToggle = spotlight.resultToggle ?? spotlight.resultLabel;
 
   return (
-    <article className={`spec-grade${compact ? " spec-grade--compact" : ""}`}>
+    <article id={grade.anchor} className={`spec-grade${compact ? " spec-grade--compact" : ""}`}>
       <header className="spec-grade__head">
         <small>{spotlight.gradeLabel}</small>
         <h3>{grade.name}</h3>
@@ -178,7 +179,9 @@ function SpotlightBlock({ spotlight, alt }: { spotlight: Spotlight; alt: boolean
   useEffect(() => {
     const applyHash = () => {
       const raw = window.location.hash.replace(/^#/, "");
-      const index = groups.findIndex((group) => group.id === raw || `panel-${group.id}` === raw);
+      const index = groups.findIndex(
+        (group) => group.id === raw || `panel-${group.id}` === raw || group.grades.some((grade) => grade.anchor === raw),
+      );
       if (index >= 0) setActive(index);
     };
     applyHash();
@@ -188,9 +191,14 @@ function SpotlightBlock({ spotlight, alt }: { spotlight: Spotlight; alt: boolean
 
   useEffect(() => {
     const raw = window.location.hash.replace(/^#/, "");
-    if (!raw || (current?.id !== raw && `panel-${current?.id}` !== raw)) return;
-    document.getElementById(current.id)?.scrollIntoView({ block: "start" });
-  }, [current?.id]);
+    if (!raw || !current) return;
+    const target = current.grades.some((grade) => grade.anchor === raw) ? raw : current.id;
+    if (target !== raw && `panel-${current.id}` !== raw) return;
+    // Defer: on arrival from another page the router scrolls to the top after
+    // this effect runs, because the panel did not exist when it looked.
+    const timer = window.setTimeout(() => document.getElementById(target)?.scrollIntoView({ block: "start", behavior: "instant" }), 0);
+    return () => window.clearTimeout(timer);
+  }, [current]);
   const compact = current.grades.length > 1;
   const showChoose = Boolean(spotlight.chooseHint && current.id === "mg-monohydrate");
   const galleries = spotlight.galleries?.filter((gallery) => !gallery.groupId || gallery.groupId === current.id);
