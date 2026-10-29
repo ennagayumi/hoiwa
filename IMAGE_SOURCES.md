@@ -26,4 +26,4 @@ Next.js Image Optimization serves supported browsers AVIF or WebP derivatives. N
 
 ## Production base text
 
-The production-base figures, quality steps and shipment records on the home page, and the magnesium sections of the careers primer, are taken from the producer's own published pages (about, inspection certificates, application and news on xyfertilizer.com and tjxingyu.com). The producer's pages disagree on annual output (120,000 t, 150,000 t and 300,000 t appear on different pages), so no output figure is shown until the producer confirms one.
+The production-base figures, quality steps and shipment records on the home page, and the magnesium sections of the careers primer, are taken from the producer's own published pages (about, inspection certificates, application and news on xyfertilizer.com and tjxingyu.com). The producer's pages disagree on annual output (120,000 t, 150,000 t and 300,000 t appear on different pages). The producer confirmed 120,000 t, the figure in its own data sheet, and that is the figure shown.

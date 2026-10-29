@@ -124,11 +124,11 @@ const coreTranslations = {
       facts: [
         { value: "1993", unit: "年", label: "生産基地の創業" },
         { value: "20,000", unit: "㎡", label: "工場敷地" },
-        { value: "80", unit: "km", label: "天津港までの距離" },
+        { value: "120,000", unit: "t/年", label: "年間生産量" },
         { value: "ISO 9001", unit: "", label: "品質マネジメントシステム" },
       ],
       factPillars: [
-        { icon: "factory", en: "Factory Strength", title: "生産体制", items: ["創業 1993年（天津市静海区陳官屯鎮）", "敷地 20,000㎡（製造棟 8,000㎡、倉庫 3,000㎡）", "七水塩・無水・一水塩（キーゼライト）の3工場", "天津港まで80km、鉄道貨物駅まで15km"] },
+        { icon: "factory", en: "Factory Strength", title: "生産体制", items: ["創業 1993年（天津市静海区陳官屯鎮）", "敷地 20,000㎡（製造棟 8,000㎡、倉庫 3,000㎡）", "七水塩・無水・一水塩（キーゼライト）の3工場、年間生産量 12万トン", "天津港まで80km、鉄道貨物駅まで15km"] },
         { icon: "quality", en: "Quality Control", title: "品質管理", items: ["ISO 9001 に基づく品質管理", "原料の酸化マグネシウム（MgO 90%）を受入時に検査", "製造中に水不溶分を3回以上検査", "製品はロットごとに抜取検査し、COAを発行", "SGS・Intertek などの第三者検査を受入れ"] },
         { icon: "service", en: "Service", title: "出荷対応", items: ["生産期間の目安は7〜15日", "25 kg・50 kg PP袋、クラフト紙袋、ジャンボバッグ、バルク", "袋の印刷・荷印の指定（OEM）に対応", "コンテナ、在来船（ブレークバルク）で出荷"] },
       ],
@@ -907,11 +907,11 @@ const coreTranslations = {
       facts: [
         { value: "1993", unit: "", label: "Production base established" },
         { value: "20,000", unit: "㎡", label: "Plant site" },
-        { value: "80", unit: "km", label: "Distance to Tianjin port" },
+        { value: "120,000", unit: "t/yr", label: "Annual output" },
         { value: "ISO 9001", unit: "", label: "Quality management system" },
       ],
       factPillars: [
-        { icon: "factory", en: "Factory Strength", title: "Production", items: ["Established in 1993 (Chenguantun, Jinghai District, Tianjin)", "Site 20,000㎡ (workshops 8,000㎡, warehouse 3,000㎡)", "Three workshops: heptahydrate, anhydrous, monohydrate (kieserite)", "80 km to Tianjin port, 15 km to the rail freight yard"] },
+        { icon: "factory", en: "Factory Strength", title: "Production", items: ["Established in 1993 (Chenguantun, Jinghai District, Tianjin)", "Site 20,000㎡ (workshops 8,000㎡, warehouse 3,000㎡)", "Three workshops: heptahydrate, anhydrous, monohydrate (kieserite); 120,000 t a year", "80 km to Tianjin port, 15 km to the rail freight yard"] },
         { icon: "quality", en: "Quality Control", title: "Quality", items: ["Quality managed under ISO 9001", "Raw magnesium oxide (MgO 90%) checked on receipt", "Water-insoluble matter tested three or more times in production", "Every lot sampled after production, with a COA", "Third-party inspection such as SGS and Intertek accepted"] },
         { icon: "service", en: "Service", title: "Shipping", items: ["Typical production time 7–15 days", "25 kg / 50 kg PP bags, kraft paper bags, jumbo bags, bulk", "Custom bag printing and shipping marks (OEM)", "Shipped by container or break-bulk vessel"] },
       ],
