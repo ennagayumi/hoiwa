@@ -227,6 +227,40 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="shipments-home section">
+        <div className="shell">
+          <SectionHeading en={t.home.shipmentsTag} title={t.home.shipmentsTitle} intro={t.home.shipmentsIntro} />
+          <ol className="shipments-home__list">
+            {t.home.shipments.map((item) => (
+              <li key={item.date + item.quantity}>
+                <time>{item.date}</time>
+                <div className="shipments-home__head">
+                  <b>{item.quantity}</b>
+                  <strong>{item.product}</strong>
+                </div>
+                <dl>
+                  <div>
+                    <dt>{t.home.shipmentsLabels.destination}</dt>
+                    <dd>{item.destination}</dd>
+                  </div>
+                  <div>
+                    <dt>{t.home.shipmentsLabels.transport}</dt>
+                    <dd>{item.transport}</dd>
+                  </div>
+                  {item.inspection ? (
+                    <div>
+                      <dt>{t.home.shipmentsLabels.inspection}</dt>
+                      <dd>{item.inspection}</dd>
+                    </div>
+                  ) : null}
+                </dl>
+              </li>
+            ))}
+          </ol>
+          <p className="shipments-home__source">{t.home.shipmentsSource}</p>
+        </div>
+      </section>
+
       <section className="intro section shell">
         <SectionHeading en={t.home.introTag} title={t.home.introTitle} />
         <div className="intro__body">
@@ -235,35 +269,6 @@ export default function Home() {
             {t.home.introLink}
             <span>›</span>
           </Link>
-        </div>
-      </section>
-
-      <section className="application-home section">
-        <div className="shell">
-          <SectionHeading en={t.home.applicationTag} title={t.home.applicationTitle} intro={t.home.applicationIntro} />
-          <div className="application-home__grid">
-            {t.home.applications.map((item) => (
-              <article key={item.cropEn + item.market} className="crop-card">
-                <div className="crop-card__visual">
-                  <Image src={item.image} alt={item.imageAlt} width={960} height={640} sizes="(max-width: 640px) 100vw, (max-width: 1080px) 50vw, 380px" />
-                  <span className="crop-card__market">{item.marketLabel}</span>
-                </div>
-                <div className="crop-card__body">
-                  <small>{item.cropEn}</small>
-                  <h3>{item.crop}</h3>
-                  <p>{item.desc}</p>
-                  <dl>
-                    <dt>{t.home.applicationProductsLabel}</dt>
-                    <dd>
-                      {item.products.map((name) => (
-                        <span key={name}>{name}</span>
-                      ))}
-                    </dd>
-                  </dl>
-                </div>
-              </article>
-            ))}
-          </div>
         </div>
       </section>
 
