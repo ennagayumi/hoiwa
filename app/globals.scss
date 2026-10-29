@@ -249,8 +249,16 @@ button { color: inherit; }
 .network-map { position: relative; aspect-ratio: 1.8; background: #eef1ef; overflow: hidden;
   svg { width: 100%; height: 100%; display: block; }
   &__countries path { fill: #d1d9d5; stroke: #f6f7f5; stroke-width: .7; }
-  &__routes path { fill: none; stroke: $bronze; stroke-width: 1.7; stroke-dasharray: 5 6; }
+  &__routes path { fill: none; stroke: $navy; stroke-width: 1.1; stroke-dasharray: 3 5; opacity: .45; }
+  &__routes &__route--supply { stroke: $bronze; stroke-width: 2; stroke-dasharray: 5 6; opacity: 1; }
   &__nodes circle:first-child { fill: $navy; }
+  &__node--shipment circle:first-child { fill: #6f7f88; }
+  &__node--shipment text { fill: #4d5c64; font-size: 11px; font-weight: 560; }
+  &__legend { position: absolute; left: 14px; bottom: 10px; margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 4px 16px; color: $muted; font-size: 11px;
+    li { display: flex; align-items: center; gap: 7px; }
+    li::before { content: ""; width: 22px; border-top: 2px dashed $bronze; }
+  }
+  &__legend--shipment::before { border-top: 1px dashed $navy !important; opacity: .6; }
   &__pulse { fill: none; stroke: $bronze; stroke-width: 1.5; opacity: .55; }
   &__nodes text { fill: $navy; font-size: 12px; font-weight: 650; paint-order: stroke; stroke: rgba(238,241,239,.9); stroke-width: 5px; }
   &__node--origin circle:first-child { fill: $bronze; }
@@ -406,6 +414,14 @@ button { color: inherit; }
 .network-regions { margin-top: 70px; display: grid; grid-template-columns: repeat(2,1fr); border-top: 1px solid $line; }
 .network-regions article { padding: 34px 10% 34px 0; border-bottom: 1px solid $line; }
 .network-regions article:nth-child(odd) { border-right: 1px solid $line; margin-right: 10%; }
+.network-shipments { padding-top: 0;
+  ul { margin: 0; padding: 0; list-style: none; border-top: 1px solid $line; }
+  li { display: grid; grid-template-columns: 1.3fr 1.6fr .6fr .5fr; gap: 20px; align-items: baseline; padding: 20px 0; border-bottom: 1px solid $line; font-size: 14px; }
+  strong { color: $navy; font-size: 16px; }
+  span, time { color: $muted; }
+  b { color: $navy; font-weight: 650; }
+  &__source { margin: 16px 0 0; color: $muted; font-size: 12px; }
+}
 .network-regions h2 { margin: 0 0 10px; color: $navy; font-size: 22px; }.network-regions p { margin: 0; color: $muted; font-size: 14px; }
 .network-note { background: $paper; }.network-note .shell { display: grid; grid-template-columns: 1fr 1fr; gap: 11%; }.network-note .shell > p { padding-top: 47px; color: $muted; }
 .trade-flow .section-heading { margin-bottom: 70px; }
@@ -662,6 +678,11 @@ button { color: inherit; }
   .contact-band { padding: 75px 0; }.contact-band .shell { display: block; }.contact-band h2 { font-size: 25px; }.contact-band a { width: 100%; height: 78px; margin-top: 35px; }
   .page-hero { height: 390px; }.page-hero__inner { padding-top: 135px; }.page-hero h1 { font-size: 28px; }.page-hero__inner > div { font-size: 12px; }
   .service-list article { grid-template-columns: 48px 1fr; gap: 12px; }.service-list article p { grid-column: 2; }
+  .network-shipments li { grid-template-columns: 1fr auto; gap: 4px 16px; }
+  .network-shipments span { grid-column: 1; }
+  .network-shipments b { grid-column: 2; grid-row: 1; }
+  .network-map__nodes text { font-size: 26px; stroke-width: 8px; }.network-map__node--shipment text { font-size: 24px; }
+  .network-map { aspect-ratio: auto; }.network-map svg { height: auto; aspect-ratio: 1.8; }.network-map__legend { position: static; padding: 4px 12px 10px; }
   .policy-grid, .network-regions { grid-template-columns: 1fr; }.policy-grid article:nth-child(odd), .network-regions article:nth-child(odd) { border-right: 0; margin-right: 0; }.policy-grid article, .network-regions article { padding-right: 0; }
   .product-detail__list article { grid-template-columns: 1fr; gap: 28px; }.product-detail header b { margin-bottom: 18px; }.product-detail dl div { grid-template-columns: 110px 1fr; }
   .notice-block { grid-template-columns: 1fr; padding: 25px 25px; gap: 10px; }

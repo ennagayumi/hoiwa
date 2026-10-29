@@ -24,6 +24,20 @@ export default function NetworkPage() {
           ))}
         </div>
       </section>
+      <section className="network-shipments section shell">
+        <SectionHeading en={t.network.shipmentsTag} title={t.network.shipmentsTitle} intro={t.network.shipmentsIntro} />
+        <ul>
+          {t.home.shipments.map((item) => (
+            <li key={item.date + item.quantity}>
+              <strong>{item.destination}</strong>
+              <span>{item.product}</span>
+              <b>{item.quantity}</b>
+              <time>{item.date}</time>
+            </li>
+          ))}
+        </ul>
+        <p className="network-shipments__source">{t.home.shipmentsSource}</p>
+      </section>
       <section className="network-note section">
         <div className="shell">
           <SectionHeading en={t.network.noteTag} title={t.network.noteTitle} />
