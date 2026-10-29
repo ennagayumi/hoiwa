@@ -138,7 +138,7 @@ const coreTranslations = {
       shipmentsLabels: { destination: "仕向地", transport: "輸送・包装", inspection: "検査・対応" },
       shipments: [
         { date: "2025.06", product: "硫酸マグネシウム七水塩", quantity: "81 t", destination: "インドネシア", transport: "25 kg袋 3,240袋、コンテナ", inspection: "SGS立会いで積込み。各コンテナから20袋を抜き取って計量し、すべて 25.05 kg 以上" },
-        { date: "2025.04", product: "七水塩 99.5%（0.1–1 mm）", quantity: "900 t", destination: "チリ（バルパライソ港）", transport: "在来船（ブレークバルク）", inspection: "Intertek検査。20℃の溶解度 1,286 g/L、鉛・カドミウム・クロム・水銀は不検出" },
+        { date: "2025.04", product: "七水塩 99.5%（0.1–1 mm）", quantity: "900 t", destination: "チリ（バルパライソ港）", transport: "在来船（ブレークバルク）", inspection: "Intertek検査。鉛・カドミウム・クロム・水銀は不検出" },
         { date: "2025.04", product: "硫酸マグネシウム七水塩", quantity: "114 t", destination: "ブラジル（サントス港）", transport: "40フィート NOR コンテナ。床と内壁に保護フィルムを敷き、袋の擦れを防止", inspection: "" },
         { date: "2024.12", product: "無水硫酸マグネシウム", quantity: "1,000 t", destination: "北米", transport: "在来船。指定の特注包装", inspection: "コンテナ輸送で続いていた取引先からのリピート注文。15日で生産、2日で港へ搬入" },
         { date: "2024.11", product: "一水塩（粒状）", quantity: "5,000 t", destination: "欧州", transport: "無包装のバルク、在来船（天津港）", inspection: "工場で第三者検査を実施。契約期限より前に港の倉庫へ搬入" },
@@ -310,26 +310,6 @@ const coreTranslations = {
               { item: "粒度", spec: "粉 10–100 mesh ／ 微粒 0.1–2 mm ／ 粒 2–4・2–5 mm" },
               { item: "色", spec: "淡黄白色。青・緑・赤の着色粒も製造" },
               { item: "包装", spec: "50 kg PP袋（パレット積み可）、1,000 / 1,100 / 1,250 kg ジャンボバッグ" },
-              { item: "最小ロット", spec: "300 t" },
-            ],
-          },
-          {
-            name: "一水塩 99%（精製）",
-            group: "一水塩",
-            groupId: "mg-monohydrate",
-            form: "粉 80–120 mesh ／ 粒 8–20 mesh",
-            desc: "水に溶ける精製グレードで、キーゼライトとは別の製品です。生産基地では飼料・工業用として製造しています。肥料用途での調達はご相談ください。",
-            specs: [
-              { item: "主含量", spec: "99% 以上" },
-              { item: "MgSO₄", spec: "86% 以上" },
-              { item: "MgO", spec: "28.60% 以上" },
-              { item: "Mg", spec: "17.21% 以上" },
-              { item: "塩化物", spec: "0.014% 以下" },
-              { item: "Fe", spec: "0.0015% 以下" },
-              { item: "As", spec: "0.0002% 以下" },
-              { item: "重金属", spec: "0.0008% 以下" },
-              { item: "pH", spec: "5–9" },
-              { item: "包装", spec: "50 kg PP袋、ジャンボバッグ（25 kg袋・バルクも可）" },
             ],
           },
           {
@@ -344,13 +324,8 @@ const coreTranslations = {
               { item: "MgO", spec: "32.60% 以上 ／ 33% 以上" },
               { item: "Mg", spec: "19.60% 以上 ／ 19.8% 以上" },
               { item: "塩化物", spec: "0.014% 以下" },
-              { item: "Fe", spec: "0.001% 以下" },
-              { item: "As", spec: "0.0002% 以下" },
-              { item: "重金属", spec: "0.001% 以下" },
               { item: "pH", spec: "5.0–9.5" },
               { item: "粒度", spec: "80–120 / 20–80 / 8–20 mesh" },
-              { item: "かさ密度", spec: "約 600 kg/m³（粉）" },
-              { item: "グレード", spec: "農業用・工業用・飼料用" },
               { item: "包装", spec: "25 kg / 50 kg PP袋、1 t ジャンボバッグ（フレコン）" },
             ],
           },
@@ -366,9 +341,6 @@ const coreTranslations = {
               { item: "MgO", spec: "16.06% ／ 16.20% ／ 16.27% 以上" },
               { item: "Mg", spec: "9.68% ／ 9.76% ／ 9.80% 以上" },
               { item: "塩化物", spec: "0.014% 以下" },
-              { item: "Fe", spec: "0.0015% 以下" },
-              { item: "As", spec: "0.0002% 以下" },
-              { item: "重金属", spec: "0.0008% 以下" },
               { item: "pH", spec: "5–9" },
               { item: "結晶粒径", spec: "0.1–1 mm ／ 1–3 mm ／ 2–4 mm ／ 大粒 4–7 mm" },
               { item: "包装", spec: "25 kg / 50 kg PP袋、1 t ジャンボバッグ（フレコン）" },
@@ -711,7 +683,7 @@ const coreTranslations = {
         {
           title: "作物にとってのマグネシウム",
           points: [
-            "マグネシウムは、窒素・りん酸・カリに次いで重要とされる要素です。",
+            "マグネシウムは、窒素・りん酸・カリの三要素に次ぐ中量要素のひとつです（ほかにカルシウム、硫黄）。",
             "不足すると、まず葉が黄化して枯れ、光合成が十分に行われなくなります。ひどい場合は株が枯れます。",
             "マグネシウム肥料の消費は欧州が最も多く、東南アジア、北米が続きます。この3地域で世界の消費量の70%以上を占めます。",
             "硫酸マグネシウムは食品、飼料、製紙、水処理にも使われますが、80%は肥料用途です。",
@@ -720,7 +692,7 @@ const coreTranslations = {
         {
           title: "硫酸マグネシウムの種類",
           points: [
-            "結晶水の数によって、無水・一水・二水・三水・五水・七水があります。生産基地では七水塩、無水、一水塩（キーゼライト）を製造しています。",
+            "結晶水の数が異なる、いくつかの形があります。生産基地では七水塩、無水、一水塩（キーゼライト）を製造しています。",
             "七水塩（MgSO₄·7H₂O）：水に100%溶けます。スプリンクラーや点滴での灌水、葉面散布に使います。",
             "無水（MgSO₄）：水に100%溶けます。化成肥料にマグネシウムを補う原料として使います。",
             "一水塩（キーゼライト、MgSO₄·H₂O）：基肥に使います。生産基地の硫酸マグネシウムのうち、キーゼライトだけは全量が水に溶ける製品ではありません。",
@@ -729,7 +701,7 @@ const coreTranslations = {
         {
           title: "中国での製法",
           points: [
-            "中国には30以上の硫酸マグネシウム工場があります。製法は硫酸法が75%、塩湖のかん水利用が18%、製塩の副産物が7%です。",
+            "中国での製法は硫酸法が75%、塩湖のかん水利用が18%、製塩の副産物が7%です。",
             "近年は、生産量の50〜60%が輸出されています。",
             "生産基地は硫酸法です。原料の酸化マグネシウムは MgO 90% のものを、受入時に検査しています。",
           ],
@@ -737,8 +709,8 @@ const coreTranslations = {
         {
           title: "品質の見方",
           points: [
-            "七水塩は中国の規格 GB/T 26568-2011 で検査します。主な項目は MgSO₄·7H₂O の含量、Mg 含量、遊離水分、水不溶分です。",
-            "七水塩は含量で Mg と S の量が決まります。中国規格の一等品は含量 99.5% です。",
+            "生産基地では、七水塩を中国の規格 GB/T 26568-2011 に沿って検査しています。主な項目は MgSO₄·7H₂O の含量、Mg 含量、遊離水分、水不溶分です。",
+            "七水塩は含量で Mg と S の量が決まります。",
             "生産基地では、製造中に水不溶分を3回以上検査し、製品はロットごとに抜取検査します。船積み前に SGS や Intertek の検査を入れることもあります。",
           ],
         },
@@ -966,7 +938,7 @@ const coreTranslations = {
       shipmentsLabels: { destination: "Destination", transport: "Transport & packing", inspection: "Inspection & handling" },
       shipments: [
         { date: "2025.06", product: "Magnesium sulfate heptahydrate", quantity: "81 t", destination: "Indonesia", transport: "3,240 × 25 kg bags, containers", inspection: "Loaded under SGS supervision. 20 bags weighed from each container, all at 25.05 kg or more" },
-        { date: "2025.04", product: "Heptahydrate 99.5% (0.1–1 mm)", quantity: "900 t", destination: "Chile (Valparaíso)", transport: "Break-bulk vessel", inspection: "Tested by Intertek. Solubility 1,286 g/L at 20°C; lead, cadmium, chromium and mercury not detected" },
+        { date: "2025.04", product: "Heptahydrate 99.5% (0.1–1 mm)", quantity: "900 t", destination: "Chile (Valparaíso)", transport: "Break-bulk vessel", inspection: "Tested by Intertek; lead, cadmium, chromium and mercury not detected" },
         { date: "2025.04", product: "Magnesium sulfate heptahydrate", quantity: "114 t", destination: "Brazil (Santos)", transport: "40 ft NOR containers, floor and walls lined with protective film against bag abrasion", inspection: "" },
         { date: "2024.12", product: "Magnesium sulfate anhydrous", quantity: "1,000 t", destination: "North America", transport: "Break-bulk vessel, custom packing", inspection: "Repeat order from a customer previously served by container. Produced in 15 days, delivered to port in 2" },
         { date: "2024.11", product: "Monohydrate granules", quantity: "5,000 t", destination: "Europe", transport: "Unpacked bulk, break-bulk vessel from Tianjin", inspection: "Third-party inspection at the plant. Delivered to the port warehouse ahead of the contract date" },
@@ -1138,26 +1110,6 @@ const coreTranslations = {
               { item: "Size", spec: "Powder 10–100 mesh / micro-granule 0.1–2 mm / granule 2–4 or 2–5 mm" },
               { item: "Color", spec: "Yellowish white; blue, green and red granules also made" },
               { item: "Packing", spec: "50 kg PP bags (palletized on request), 1,000 / 1,100 / 1,250 kg jumbo bags" },
-              { item: "Minimum order", spec: "300 t" },
-            ],
-          },
-          {
-            name: "Monohydrate 99% (refined)",
-            group: "Monohydrate",
-            groupId: "mg-monohydrate",
-            form: "Powder 80–120 mesh / granule 8–20 mesh",
-            desc: "A water-soluble refined grade, a different product from kieserite. The production base makes it as a feed and industrial grade; ask us about fertilizer use.",
-            specs: [
-              { item: "Assay", spec: "99% min" },
-              { item: "MgSO₄", spec: "86% min" },
-              { item: "MgO", spec: "28.60% min" },
-              { item: "Mg", spec: "17.21% min" },
-              { item: "Chloride", spec: "0.014% max" },
-              { item: "Fe", spec: "0.0015% max" },
-              { item: "As", spec: "0.0002% max" },
-              { item: "Heavy metals", spec: "0.0008% max" },
-              { item: "pH", spec: "5–9" },
-              { item: "Packing", spec: "50 kg PP bags, jumbo bags (25 kg bags or bulk also possible)" },
             ],
           },
           {
@@ -1172,13 +1124,8 @@ const coreTranslations = {
               { item: "MgO", spec: "32.60% min / 33% min" },
               { item: "Mg", spec: "19.60% min / 19.8% min" },
               { item: "Chloride", spec: "0.014% max" },
-              { item: "Fe", spec: "0.001% max" },
-              { item: "As", spec: "0.0002% max" },
-              { item: "Heavy metals", spec: "0.001% max" },
               { item: "pH", spec: "5.0–9.5" },
               { item: "Size", spec: "80–120 / 20–80 / 8–20 mesh" },
-              { item: "Bulk density", spec: "About 600 kg/m³ (powder)" },
-              { item: "Grades", spec: "Agricultural, industrial, feed" },
               { item: "Packing", spec: "25 kg / 50 kg PP bags, 1 t jumbo bags" },
             ],
           },
@@ -1194,9 +1141,6 @@ const coreTranslations = {
               { item: "MgO", spec: "16.06% / 16.20% / 16.27% min" },
               { item: "Mg", spec: "9.68% / 9.76% / 9.80% min" },
               { item: "Chloride", spec: "0.014% max" },
-              { item: "Fe", spec: "0.0015% max" },
-              { item: "As", spec: "0.0002% max" },
-              { item: "Heavy metals", spec: "0.0008% max" },
               { item: "pH", spec: "5–9" },
               { item: "Crystal size", spec: "0.1–1 mm / 1–3 mm / 2–4 mm / large granule 4–7 mm" },
               { item: "Packing", spec: "25 kg / 50 kg PP bags, 1 t jumbo bags" },
@@ -1537,7 +1481,7 @@ const coreTranslations = {
         {
           title: "Magnesium for crops",
           points: [
-            "Magnesium is ranked as the most important element after nitrogen, phosphorus and potassium.",
+            "Magnesium is one of the secondary nutrients that follow the three primary ones, nitrogen, phosphorus and potassium (the others are calcium and sulfur).",
             "When it runs short, leaves first yellow and wither and photosynthesis falls off; in severe cases the plant dies.",
             "Europe uses the most magnesium fertilizer, followed by Southeast Asia and North America. Together they account for over 70% of world consumption.",
             "Magnesium sulfate also goes into food, feed, papermaking and water treatment, but 80% is used as fertilizer.",
@@ -1546,7 +1490,7 @@ const coreTranslations = {
         {
           title: "Types of magnesium sulfate",
           points: [
-            "By water of crystallization there are anhydrous, mono-, di-, tri-, penta- and heptahydrate forms. The production base makes heptahydrate, anhydrous and monohydrate (kieserite).",
+            "It comes in several forms that differ in water of crystallization. The production base makes heptahydrate, anhydrous and monohydrate (kieserite).",
             "Heptahydrate (MgSO₄·7H₂O): 100% water soluble. Used through sprinkler and drip irrigation and as a foliar spray.",
             "Anhydrous (MgSO₄): 100% water soluble. Used to add magnesium to compound fertilizers.",
             "Monohydrate (kieserite, MgSO₄·H₂O): used as a base fertilizer. Of the base's magnesium sulfates, kieserite is the one that is not fully water soluble.",
@@ -1555,7 +1499,7 @@ const coreTranslations = {
         {
           title: "How it is made in China",
           points: [
-            "China has more than 30 magnesium sulfate plants. 75% use the sulfuric acid process, 18% salt-lake brine, and 7% are by-products of salt making.",
+            "In China, 75% is made by the sulfuric acid process, 18% salt-lake brine, and 7% are by-products of salt making.",
             "In recent years 50–60% of output has been exported.",
             "The production base uses the sulfuric acid process, and checks its raw magnesium oxide (MgO 90%) on receipt.",
           ],
@@ -1563,8 +1507,8 @@ const coreTranslations = {
         {
           title: "Reading quality",
           points: [
-            "Heptahydrate is tested to the Chinese standard GB/T 26568-2011. The main items are MgSO₄·7H₂O assay, Mg content, free moisture and water-insoluble matter.",
-            "The assay of heptahydrate sets its Mg and S content. First grade under the Chinese standard is 99.5%.",
+            "The production base tests heptahydrate to the Chinese standard GB/T 26568-2011. The main items are MgSO₄·7H₂O assay, Mg content, free moisture and water-insoluble matter.",
+            "The assay of heptahydrate sets its Mg and S content.",
             "At the base, water-insoluble matter is tested three or more times in production and every lot is sampled afterwards. SGS or Intertek may also inspect before shipment.",
           ],
         },
