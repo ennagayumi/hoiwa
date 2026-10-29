@@ -19,7 +19,7 @@ const contactFields: Field[] = [
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 export default function ContactForm() {
-  const { t } = useLanguage();
+  const { t, locale } = useLanguage();
   const searchParams = useSearchParams();
   const presetProduct = searchParams.get("product")?.trim() ?? "";
   const [status, setStatus] = useState<Status>("idle");
@@ -169,7 +169,9 @@ export default function ContactForm() {
             {t.contact.fields.product}
             <em className="is-required">{t.contact.required}</em>
           </span>
+          {/* Keyed by locale: the form first renders in Japanese, so an English preset only matches after the switch. */}
           <select
+            key={locale}
             name="product"
             defaultValue={t.contact.productOptions.includes(presetProduct) ? presetProduct : ""}
             aria-invalid={errors.product ? true : undefined}
