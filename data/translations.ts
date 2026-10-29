@@ -110,7 +110,7 @@ const coreTranslations = {
         { en: "MgSO₄·7H₂O Crystal", name: "硫酸マグネシウム七水塩（結晶）", spec: "MgSO₄ 98–99.5%／0.1–1 mm", use: "水溶性肥料・葉面散布", href: "/products#mg-heptahydrate", image: "/images/products/magnesium-sulfate-heptahydrate-crystal.jpg", imageAlt: "七水塩の細かい白色結晶をスコップですくった様子" },
         { en: "MgSO₄·7H₂O Granule", name: "硫酸マグネシウム七水塩（粒状）", spec: "1–3／2–4／4–7 mm", use: "BB配合・直接施用", href: "/products#mg-heptahydrate", image: "/images/products/magnesium-sulfate-heptahydrate-granule.jpg", imageAlt: "透明な柱状の七水塩の粒" },
         { en: "Kieserite Granule", name: "硫酸マグネシウム一水塩（キーゼライト）", spec: "MgO 24–26%／2–5 mm", use: "BB・化成肥料原料", href: "/products#mg-monohydrate", image: "/images/products/kieserite-granule.jpg", imageAlt: "灰白色の球形キーゼライト粒" },
-        { en: "Colored Kieserite", name: "着色キーゼライト（カラー粒）", spec: "2–5 mm／着色粒", use: "BB配合の識別粒", href: "/products#mg-monohydrate", image: "/images/products/kieserite-color-granule.jpg", imageAlt: "緑、白、茶、黄、青、赤に着色したキーゼライト粒のサンプル" },
+        { en: "Colored Kieserite", name: "着色キーゼライト（カラー粒）", spec: "2–5 mm／着色粒", use: "BB配合の識別粒", href: "/products#mg-kieserite", image: "/images/products/kieserite-color-granule.jpg", imageAlt: "緑、白、茶、黄、青、赤に着色したキーゼライト粒のサンプル" },
         { en: "MgSO₄ Anhydrous", name: "無水硫酸マグネシウム", spec: "MgSO₄ 98／99%以上", use: "化成・配合原料", href: "/products#mg-anhydrous", image: "/images/products/magnesium-sulfate-anhydrous-granule.jpg", imageAlt: "皿に盛った白色の無水硫酸マグネシウム粒" },
         { en: "MgSO₄ Powder", name: "硫酸マグネシウム（粉状）", spec: "80–120 mesh", use: "化成肥料・工業用途", href: "/products#mg-anhydrous", image: "/images/products/magnesium-sulfate-powder.jpg", imageAlt: "手のひらにのせた白色の硫酸マグネシウム粉末" },
         { en: "Magnesium Oxide", name: "酸化マグネシウム", spec: "MgO 85%ほか／粉状", use: "土壌改良・配合原料", href: "/products#other", image: "/images/products/magnesium-oxide-powder.jpg", imageAlt: "淡い黄土色の酸化マグネシウム粉末" },
@@ -298,6 +298,7 @@ const coreTranslations = {
             name: "キーゼライト（工場標準）",
             group: "一水塩",
             groupId: "mg-monohydrate",
+            anchor: "mg-kieserite",
             form: "粉・微粒・粒・着色粒",
             desc: "生産基地が公開している一水塩（キーゼライト）の規格幅です。硫酸と酸化マグネシウムを反応させ、粉砕したものを皿型造粒機で造粒します。全MgOは塩酸で溶かして測定します。",
             specs: [
@@ -871,7 +872,7 @@ const coreTranslations = {
         { en: "MgSO₄·7H₂O Crystal", name: "Magnesium sulfate heptahydrate (crystal)", spec: "MgSO₄ 98–99.5% / 0.1–1 mm", use: "Water-soluble fertilizer, foliar spray", href: "/products#mg-heptahydrate", image: "/images/products/magnesium-sulfate-heptahydrate-crystal.jpg", imageAlt: "Fine white heptahydrate crystals in a scoop" },
         { en: "MgSO₄·7H₂O Granule", name: "Magnesium sulfate heptahydrate (granular)", spec: "1–3 / 2–4 / 4–7 mm", use: "BB blending, direct application", href: "/products#mg-heptahydrate", image: "/images/products/magnesium-sulfate-heptahydrate-granule.jpg", imageAlt: "Clear prismatic heptahydrate granules" },
         { en: "Kieserite Granule", name: "Magnesium sulfate monohydrate (kieserite)", spec: "MgO 24–26% / 2–5 mm", use: "BB and compound-fertilizer feedstock", href: "/products#mg-monohydrate", image: "/images/products/kieserite-granule.jpg", imageAlt: "Off-white spherical kieserite granules" },
-        { en: "Colored Kieserite", name: "Colored kieserite granules", spec: "2–5 mm / colored granules", use: "Identifier granules in BB blends", href: "/products#mg-monohydrate", image: "/images/products/kieserite-color-granule.jpg", imageAlt: "Kieserite samples colored green, white, brown, yellow, blue, and red" },
+        { en: "Colored Kieserite", name: "Colored kieserite granules", spec: "2–5 mm / colored granules", use: "Identifier granules in BB blends", href: "/products#mg-kieserite", image: "/images/products/kieserite-color-granule.jpg", imageAlt: "Kieserite samples colored green, white, brown, yellow, blue, and red" },
         { en: "MgSO₄ Anhydrous", name: "Magnesium sulfate anhydrous", spec: "MgSO₄ 98 / 99% min.", use: "Compound and blending feedstock", href: "/products#mg-anhydrous", image: "/images/products/magnesium-sulfate-anhydrous-granule.jpg", imageAlt: "White anhydrous magnesium sulfate granules on a plate" },
         { en: "MgSO₄ Powder", name: "Magnesium sulfate (powder)", spec: "80–120 mesh", use: "Compound fertilizer, industrial use", href: "/products#mg-anhydrous", image: "/images/products/magnesium-sulfate-powder.jpg", imageAlt: "White magnesium sulfate powder in a gloved hand" },
         { en: "Magnesium Oxide", name: "Magnesium oxide", spec: "MgO 85% and other grades / powder", use: "Soil amendment, blending feedstock", href: "/products#other", image: "/images/products/magnesium-oxide-powder.jpg", imageAlt: "Pale ochre magnesium oxide powder" },
@@ -1059,6 +1060,7 @@ const coreTranslations = {
             name: "Kieserite (producer standard)",
             group: "Monohydrate",
             groupId: "mg-monohydrate",
+            anchor: "mg-kieserite",
             form: "Powder, micro-granule, granule, colored granule",
             desc: "The kieserite (monohydrate) ranges the production base publishes. Sulfuric acid is reacted with magnesium oxide, then crushed and granulated on a disc granulator. Total MgO is measured after dissolving in hydrochloric acid.",
             specs: [

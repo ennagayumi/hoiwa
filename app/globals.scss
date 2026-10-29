@@ -320,7 +320,7 @@ button { color: inherit; }
 .spec-spotlight--grid { background: $white; border-top: 1px solid $line; }
 .spec-spotlight .section-heading { margin-bottom: 60px; max-width: 780px; }
 .spec-spotlight--tabs .section-heading { margin-bottom: 32px; }
-.spec-spotlight [role="tabpanel"] { scroll-margin-top: 100px; }
+.spec-spotlight [role="tabpanel"], .spec-grade[id] { scroll-margin-top: 100px; }
 .spec-tabs-wrap { margin: 0 0 36px; }
 .spec-tabs__hint { margin: 0 0 12px; color: $bronze; font-size: 12px; font-weight: 600; letter-spacing: .08em; }
 .spec-tabs { display: flex; flex-wrap: wrap; gap: 10px; margin: 0; }
