@@ -178,18 +178,6 @@ export default function Home() {
               </li>
             ))}
           </ul>
-          <div className="products-home__other">
-            <strong>{t.home.productsOtherTitle}</strong>
-            <ul>
-              {t.home.productsOther.map((name) => (
-                <li key={name}>{name}</li>
-              ))}
-            </ul>
-            <Link className="text-link" href="/products#other">
-              {t.products.otherCta}
-              <span>›</span>
-            </Link>
-          </div>
         </div>
       </section>
 

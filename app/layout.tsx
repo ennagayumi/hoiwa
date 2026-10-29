@@ -45,7 +45,7 @@ const structuredData = {
       },
       slogan: "規格と納期を明確にして、肥料原料を供給する。",
       areaServed: ["JP"],
-      knowsAbout: ["肥料", "肥料原料", "硫酸アンモニウム", "尿素", "カリ肥料", "国際貿易", "輸出入", "Ammonium Sulfate", "Urea", "Potash"],
+      knowsAbout: ["肥料", "肥料原料", "硫酸マグネシウム", "硫酸アンモニウム", "酸化マグネシウム", "国際貿易", "輸出入", "Magnesium Sulfate", "Ammonium Sulfate", "Magnesium Oxide"],
       knowsLanguage: ["ja", "en", "zh"],
       contactPoint: {
         "@type": "ContactPoint",
